@@ -1,32 +1,32 @@
-*{
+* {
     box-sizing: border-box;
 }
-html{
+
+html {
     height: 100vh;
     width: 100vw;
 }
 
-body{
+body {
     margin: 0;
     padding: 0;
 }
 
 /* layout */
-.memes-playground-container{
+.memes-playground-container {
     height: 50%;
     width: 100%;
-   
+
 }
 
 /* canvas */
-.canvas-wrapper {
-}
+.canvas-wrapper {}
 
 canvas {
     border: 1px solid black;
 }
 
-.bar-wrapper{
+.bar-wrapper {
     height: 400px;
     width: 200px;
     background-color: #8bc34a;
@@ -34,7 +34,7 @@ canvas {
     text-align: center;
 }
 
-.final-stage{
+.final-stage {
     bottom: 0;
 }
 
@@ -49,13 +49,33 @@ canvas {
 
 /* helpers */
 
-.flex{
+.flex {
     display: flex;
 }
 
-.justify-center{
+.justify-center {
     justify-content: center
 }
-.space-evenly{
+
+.space-evenly {
     justify-content: space-evenly
+}
+
+
+/* buttons  */
+
+
+.controller-btn {
+    border: white 3px solid;
+    border-radius: 10px;
+    background: #812222;
+    transition: 0.3s;
+    color: white;
+}
+
+.controller-btn:hover {
+    border: #812222 3px solid;
+    background-color: white;
+    color: #812222;
+
 }

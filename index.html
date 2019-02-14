@@ -25,21 +25,25 @@
                 <div class="controller">
                     <textarea class="text" placeholder="Type text"></textarea>
                     <br>
-                    <button>+</button>
-                    <button>-</button>
-                    <button>left</button>
-                    <button>center</button>
-                    <button>right</button>
+                    <input type="color">
+                    <button class="controller-btn" onclick="onFontSizeChange('+')">+</button>
+                    <button class="controller-btn" onclick="onFontSizeChange('+')">-</button>
+                    <button class="controller-btn">left</button>
+                    <button class="controller-btn">center</button>
+                    <button class="controller-btn">right</button>
                 </div>
                 <div class="final-stage">
-                    <button>Save</button>
-                    <button>Share</button>
+                    <button class="controller-btn">Save</button>
+                    <button class="controller-btn">Share</button>
                 </div>
             </div>
         </div>
 
         <!-- gallery -->
         <div class="grid-container">
+            <div class="search-wrapper">
+                <input type="list">
+            </div>
             <div id="image1"></div>
             <div id="image2"></div>
             <div id="image3"></div>
