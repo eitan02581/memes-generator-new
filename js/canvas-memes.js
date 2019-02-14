@@ -2,12 +2,6 @@
 var gCanvas;
 var gCtx
 
-function init() {
-    gCanvas = document.querySelector('#img-canvas');
-    gCtx = gCanvas.getContext('2d')
-    initCanvas()
-}
-
 function initCanvas() {
 
     gCanvas.width = 600;
