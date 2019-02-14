@@ -40,10 +40,23 @@ canvas {
 
 /* gallery */
 .grid-container {
+    display: grid;
     grid-template-rows: 20% 20% 20% 20% 20%;
     grid-template-columns: 20% 20% 20% 20% 20%;
-    height: 800px;
-    background-color: blue;
+    grid-gap: 20px;
+    height: 700px;
+    width: 700px;
+}
+
+#image1 {
+    background: url("../1 Thursday - 2100/meme-imgs/003.jpg");
+    background-position: center center;
+    background-size: cover;
+    height: 100%;
+}
+.image-render-style{
+    width: 100%;
+    height: 100%;
 }
 
 
