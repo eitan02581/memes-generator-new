@@ -1,0 +1,61 @@
+*{
+    box-sizing: border-box;
+}
+html{
+    height: 100vh;
+    width: 100vw;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+}
+
+/* layout */
+.memes-playground-container{
+    height: 50%;
+    width: 100%;
+   
+}
+
+/* canvas */
+.canvas-wrapper {
+}
+
+canvas {
+    border: 1px solid black;
+}
+
+.bar-wrapper{
+    height: 400px;
+    width: 200px;
+    background-color: #8bc34a;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.final-stage{
+    bottom: 0;
+}
+
+/* gallery */
+.grid-container {
+    grid-template-rows: 20% 20% 20% 20% 20%;
+    grid-template-columns: 20% 20% 20% 20% 20%;
+    height: 800px;
+    background-color: blue;
+}
+
+
+/* helpers */
+
+.flex{
+    display: flex;
+}
+
+.justify-center{
+    justify-content: center
+}
+.space-evenly{
+    justify-content: space-evenly
+}

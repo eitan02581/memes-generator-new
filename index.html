@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <title>Memes-Generator</title>
+</head>
+
+<body onload="init()">
+    <header>
+        <h1>welcome to our memes generator</h1>
+    </header>
+    <!-- canvas -->
+    <input type="file" name="image" onchange="onFileInputChange(event)" />
+    <main>
+        <div class="memes-playground-container flex space-evenly">
+            <div class="canvas-wrapper">
+                <canvas id="img-canvas"></canvas>
+            </div>
+            <!-- side bar -->
+            <div class="bar-wrapper">
+                <div class="controller">
+                    <textarea class="text" placeholder="Type text"></textarea>
+                    <br>
+                    <button>+</button>
+                    <button>-</button>
+                    <button>left</button>
+                    <button>center</button>
+                    <button>right</button>
+                </div>
+                <div class="final-stage">
+                    <button>Save</button>
+                    <button>Share</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- gallery -->
+        <div class="grid-container">
+            <div id="image1"></div>
+            <div id="image2"></div>
+            <div id="image3"></div>
+            <div id="image4"></div>
+            <div id="image5"></div>
+        </div>
+    </main>
+
+
+    <script src="canvas-memes.js"></script>
+</body>
+
+</html>
