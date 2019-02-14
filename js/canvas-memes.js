@@ -2,7 +2,6 @@
 var gCanvas;
 var gCtx
 
-
 function initCanvas() {
 
     gCanvas.width = 600;

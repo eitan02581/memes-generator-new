@@ -1,8 +1,9 @@
 var gImages = [];
 
 function initGrid() {
-    createImages(); 
-    renderGrid();
+    createImages();
+    
+    renderGrid(gImages);
 }
 
 function createImage(url, tags) {
@@ -11,17 +12,36 @@ function createImage(url, tags) {
 }
 
 function createImages() {
-    gImages.push(createImage("../meme-imgs/2.jpg", ['trump', 'happy']));
-    gImages.push(createImage("../1 Thursday - 2100/meme-imgs/2.jpg", ['dance', 'happy']));
-    gImages.push(createImage("../1 Thursday - 2100/meme-imgs/003.jpg", ['trump', 'happy']));
-    gImages.push(createImage("../1 Thursday - 2100/meme-imgs/003.jpg", ['trump', 'happy']));
-    gImages.push(createImage("../1 Thursday - 2100/meme-imgs/003.jpg", ['trump', 'happy']));
-    gImages.push(createImage("../1 Thursday - 2100/meme-imgs/003.jpg", ['trump', 'happy']));
+    gImages.push(createImage("meme-imgs/img12.jpg", ['basketball', 'kiss']));
+    gImages.push(createImage("meme-imgs/img2.jpg", ['dance', 'nature']));
+    gImages.push(createImage("meme-imgs/003.jpg", ['trump', 'happy']));
+    gImages.push(createImage("meme-imgs/004.jpg", ['animal', 'dog', 'kiss']));
+    gImages.push(createImage("meme-imgs/005.jpg", ['animal', 'dog', 'baby', 'sleep']));
+    gImages.push(createImage("meme-imgs/5.jpg", ['baby', 'happy', 'nature']));
+    gImages.push(createImage("meme-imgs/006.jpg", ['cat', 'animal', 'computer', 'sleep']));
+    gImages.push(createImage("meme-imgs/8.jpg", ['bowtie', 'happy']));
+    gImages.push(createImage("meme-imgs/9.jpg", ['baby', 'nature', 'happy']));
+    gImages.push(createImage("meme-imgs/12.jpg", ['man', 'point']));
+    gImages.push(createImage("meme-imgs/19.jpg", ['man', 'crazy', 'yelling']));
+    gImages.push(createImage("meme-imgs/Ancient-Aliens.jpg", ['man', 'big', 'happy']));
+    gImages.push(createImage("meme-imgs/drevil.jpg", ['man', 'drevil']));
+    gImages.push(createImage("meme-imgs/img2.jpg", ['kids', 'nature', 'dancing']));
+    gImages.push(createImage("meme-imgs/img4.jpg", ['trump', 'point']));
+    gImages.push(createImage("meme-imgs/img5.jpg", ['baby', 'crazy']));
+    gImages.push(createImage("meme-imgs/img6.jpg", ['animal', 'dog', 'yoga']));
+    gImages.push(createImage("meme-imgs/img11.jpg", ['man', 'obama', 'happy']));
+    gImages.push(createImage("meme-imgs/leo.jpg", ['leo', 'cheers', 'happy']));
+    gImages.push(createImage("meme-imgs/meme1.jpg", ['man', 'matrix']));
+    gImages.push(createImage("meme-imgs/One-Does-Not-Simply.jpg", ['man', 'talking']));
+    gImages.push(createImage("meme-imgs/Oprah-You-Get-A.jpg", ['oprah', 'happy']));
+    gImages.push(createImage("meme-imgs/patrick.jpg", ['patrick', 'happy', 'star']));
+    gImages.push(createImage("meme-imgs/putin.jpg", ['putin', 'man', 'speech']));
+    gImages.push(createImage("meme-imgs/X-Everywhere.jpg", ['toystory', 'happy', 'talking']));
 }
 
-function renderGrid() {
-    var strHTML = gImages.map(function(image) {
-        return `<div id="${image.id}" class="images"> <img src="${image.url}" alt=""> </div>`
+function renderGrid(images) {    
+    var strHTML = images.map(function(image) {      
+        return `<div  id="${image.id}"> <img class="image-render-style" src="${image.url}" alt=""> </div>`
     })
     $('.grid-container').html(strHTML);
 }
