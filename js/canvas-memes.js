@@ -1,38 +1,58 @@
 'use setrict'
 var gCanvas;
 var gCtx
+// to fill gmeme in a better place
+var gMeme = {
+    selectedImgId: '',
+    txts: [{
+        line: '',
+        size: 20,
+        align: 'center',
+        color: 'white'
+    },{
+        line: '',
+        size: 20,
+        align: 'center',
+        color: 'white'
+    }]
+}
 
 function initCanvas() {
-
+    gCanvas = document.querySelector('#img-canvas');
+    gCtx = gCanvas.getContext('2d');
     gCanvas.width = 600;
     gCanvas.height = 300
-    gCanvas
 }
 
-// upload image to canvas
+function convertImageToCanvas(id) {
+    clearCtx()
+    gMeme.selectedImgId = id
 
-function onFileInputChange(ev) {
-    handleImageFromInput(ev, renderCanvas)
+    var image = document.getElementById(`${id}`);
+    gCanvas.width = image.naturalWidth;
+    gCanvas.height = image.naturalHeight;
+    gCtx.drawImage(image, 0, 0);
 }
 
-function renderCanvas(img) {
-    gCanvas.width = img.width;
-    gCanvas.height = img.height;
-    gCtx.drawImage(img, 0, 0);
+function onInputText() {
+    clearCtx()
+    if (gMeme.selectedImgId) convertImageToCanvas(gMeme.selectedImgId)
+    inputText()
 }
 
-//UPLOAD IMG WITH INPUT FILE
-function handleImageFromInput(ev, onImageReady) {
-    var reader = new FileReader();
+function clearCtx() {
+    gCtx.clearRect(0, 0, gCanvas.width, gCanvas.height);
+}
 
-    reader.onload = function (ev) {
-        var img = new Image();
-        img.onload = function () {
-            gCanvas.width = img.width;
-            gCanvas.height = img.height;
-            gCtx.drawImage(img, 0, 0);
-        }
-        img.src = event.target.result;
-    }
-    reader.readAsDataURL(ev.target.files[0]);
+function renderText(lineText) {
+    gCtx.font = "70px Arial";
+    gCtx.fillStyle = gMeme.color;
+    gCtx.fillText(lineText, 50, 50)
+}
+
+function onTextColor(hexColor) {
+    var color = hexColor.value
+    gCtx.fillStyle = `${color}`;
+    gMeme.color = `${color}`;
+    inputText()
 }

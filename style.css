@@ -38,6 +38,14 @@ canvas {
     bottom: 0;
 }
 
+/* meme text */
+.meme-text {
+    height: 30px;
+    background-color: #812222;
+    width: 30px;
+    display: inline-block
+}
+
 /* gallery */
 .grid-container {
     display: grid;
@@ -54,7 +62,8 @@ canvas {
     background-size: cover;
     height: 100%;
 }
-.image-render-style{
+
+.image-render-style {
     width: 100%;
     height: 100%;
 }
@@ -74,6 +83,9 @@ canvas {
     justify-content: space-evenly
 }
 
+.hidden{
+    display: none
+}
 
 /* buttons  */
 
