@@ -40,12 +40,19 @@ canvas {
 
 /* gallery */
 .grid-container {
+    display: grid;
     grid-template-rows: 20% 20% 20% 20% 20%;
     grid-template-columns: 20% 20% 20% 20% 20%;
-    height: 800px;
-    background-color: blue;
+    grid-gap: 20px;
+    height: 700px;
+    width: 700px;
 }
 
+.images {
+    background-position: center center;
+    background-size: cover;
+    height: 100%;
+}
 
 /* helpers */
 

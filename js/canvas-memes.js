@@ -2,17 +2,12 @@
 var gCanvas;
 var gCtx
 
-function init() {
-    gCanvas = document.querySelector('#img-canvas');
-    gCtx = gCanvas.getContext('2d')
-    initCanvas()
-}
 
 function initCanvas() {
 
     gCanvas.width = 600;
-    gCanvas.height = 300
-    gCanvas
+    gCanvas.height = 300;
+    // gCanvas
 }
 
 // upload image to canvas
