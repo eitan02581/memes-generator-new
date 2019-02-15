@@ -20,29 +20,29 @@
             <div class="memes-playground-container flex space-evenly ">
                 <button onclick="onDispSection()">Back to gallery</button>
                 <div class="canvas-wrapper">
-                    <canvas id="img-canvas"></canvas>
+                    <canvas onclick="canvasClicked(event)" id="img-canvas"></canvas>
                 </div>
                 <!-- side bar -->
                 <div class="bar-wrapper">
                     <div class="controller">
-                        <input oninput="onInputText()" class="text-input" placeholder="Type text">
+                        <input  oninput="onInputText('0')" class="text-input0" placeholder="Type text">
                         <br>
                         <button> <input type="file" name="image" onchange="onFileInputChange(event)" />
                         </button>
-                        <input onchange="onTextColor(this)" type="color">
-                        <button class="controller-btn" onclick="onFontSizeChange('+')">+</button>
-                        <button class="controller-btn" onclick="onFontSizeChange('+')">-</button>
+                        <input onchange="onTextColor('0',this)" type="color">
+                        <button class="controller-btn" onclick="onFontSizeChange('0','+')">+</button>
+                        <button class="controller-btn" onclick="onFontSizeChange('0','-')">-</button>
                         <button class="controller-btn">left</button>
                         <button class="controller-btn">center</button>
                         <button class="controller-btn">right</button>
                     </div>
                     <div class="controller">
-                        <input oninput="onInputText()" class="text-input" placeholder="Type text">
+                        <input oninput="onInputText('1')" class="text-input1" placeholder="Type text">
                         <br>
                         </button>
-                        <input onchange="onTextColor(this)" type="color">
-                        <button class="controller-btn" onclick="onFontSizeChange('+')">+</button>
-                        <button class="controller-btn" onclick="onFontSizeChange('+')">-</button>
+                        <input onchange="onTextColor('1',this)" type="color">
+                        <button class="controller-btn" onclick="onFontSizeChange('1','+')">+</button>
+                        <button class="controller-btn" onclick="onFontSizeChange('1','-')">-</button>
                         <button class="controller-btn">left</button>
                         <button class="controller-btn">center</button>
                         <button class="controller-btn">right</button>

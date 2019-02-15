@@ -6,8 +6,6 @@ function idGenerator() {
         txt += possible.charAt(Math.floor(Math.random() * possible.length));
     
     
-    }
-    console.log(txt);
-    
+    }    
     return txt;
 }

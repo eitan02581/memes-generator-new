@@ -1,8 +1,7 @@
-function inputText() {
-    var text = document.querySelector('.text-input').value;
-    gMeme.txts[0].line = text
-    var line = gMeme.txts[0].line
-    renderText(line)
+function inputText(i) {
+    var text = document.querySelector(`.text-input${i}`).value;
+    gMeme.txts[i].line = text
+    renderText()
 }
 
 

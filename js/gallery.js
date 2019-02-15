@@ -2,7 +2,7 @@ var gImages = [];
 
 function initGrid() {
     createImages();
-    
+
     renderGrid(gImages);
 }
 
@@ -43,10 +43,10 @@ function createImages() {
     gImages.push(createImage("meme-imgs/X-Everywhere.jpg", ['toystory', 'happy', 'talking']));
 }
 
-function renderGrid(images) {    
-    var strHTML = images.map(function(image) {      
+function renderGrid(images) {
+    var strHTML = images.map(function (image) {
         return `<div > <img id="${image.id}"  onclick="convertImageToCanvas('${image.id}') , onDispSection()"  class="image-render-style" src="${image.url}" alt=""> </div>`
-        
     })
-    $('.grid-container').html(strHTML);
+    var str = strHTML.join('')
+    document.querySelector('.grid-container').innerHTML = str.split('>,<').join('><')
 }

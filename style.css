@@ -69,6 +69,10 @@ canvas {
     margin: 50px;
 }
 
+.grid-container img {
+    cursor: pointer;
+}
+
 @media (max-width: 1040px) and (min-width: 768px) {
     .grid-container {
         grid-template-columns: repeat(3, 1fr);
@@ -105,7 +109,7 @@ canvas {
     justify-content: space-evenly
 }
 
-.hidden{
+.hidden {
     display: none
 }
 
