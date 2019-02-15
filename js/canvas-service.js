@@ -2,7 +2,7 @@ var gInputImgEv
 
 function inputText(i) {
     var text = document.querySelector(`.text-input${i}`).value;
-    gMeme.txts[i].line = text
+    gMeme.txts[i].line = text;
     renderText()
 }
 
@@ -41,6 +41,14 @@ function handleImageFromInput(ev, onImageReady) {
 function eraseText(elErase, inputBoxNum) {
     elErase.previousElementSibling.value = '';
     inputText(inputBoxNum);
+}
+
+function changeFont(elSelect) {
+    var font = document.querySelector('.select-font').value;
+    gMeme.txts[elSelect].font = font;
+    
+    console.log(gMeme.txts[elSelect]);
+    
 }
 
 // TODO: add the file to img arr

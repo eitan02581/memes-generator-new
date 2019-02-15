@@ -2,7 +2,6 @@ var gImages = [];
 
 function initGrid() {
     createImages();
-
     renderGrid(gImages);
 }
 
@@ -46,7 +45,7 @@ function createImages() {
 function renderGrid(images) {
     var strHTML = images.map(function (image) {
         return `<div > <img id="${image.id}"  onclick="convertImageToCanvas('${image.id}') , onDispSection()"  class="image-render-style" src="${image.url}" alt=""> </div>`
-    })
-    var str = strHTML.join('')
-    document.querySelector('.grid-container').innerHTML = str.split('>,<').join('><')
+    });
+    var str = strHTML.join('');
+    document.querySelector('.grid-container').innerHTML = str.split('>,<').join('><');
 }

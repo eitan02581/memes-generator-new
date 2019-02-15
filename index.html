@@ -25,13 +25,27 @@
                 <!-- side bar -->
                 <div class="bar-wrapper">
                     <div class="controller">
+                        <input type="file" name="image" onchange="onFileInputChange(event)" />
                         <div class="button-inside">
                             <input oninput="onInputText('0')" class="text-input0" placeholder="Type text">
-                            <button class="erase-btn" onclick="eraseText(this, '0')">X</button>
+                            <button class="erase-btn" onclick="onEraseText(this, '0')">X</button>
                         </div>
                         <br>
-                        <button> <input type="file" name="image" onchange="onFileInputChange(event)" />
-                        </button>
+                        <select class="select-font" onchange="onChangeFont('0');">
+                            <option value="Arial">Arial</option>
+                            <option value="Sans Serif" selected>Sans Serif</option>
+                            <option value="Comic Sans MS">Comic Sans MS</option>
+                            <option value="Times New Roman">Times New Roman</option>
+                            <option value="Courier New">Courier New</option>
+                            <option value="Verdana">Verdana</option>
+                            <option value="Trebuchet MS">Trebuchet MS</option>
+                            <option value="Arial Black">Arial Black</option>
+                            <option value="Impact">Impact</option>
+                            <option value="Bookman">Bookman</option>
+                            <option value="Garamond">Garamond</option>
+                            <option value="Palatino">Palatino</option>
+                            <option value="Georgia">Georgia</option>
+                        </select>
                         <input onchange="onTextColor('0',this)" type="color">
                         <button class="controller-btn" onclick="onFontSizeChange('0','+')">+</button>
                         <button class="controller-btn" onclick="onFontSizeChange('0','-')">-</button>
@@ -42,7 +56,7 @@
                     <div class="controller">
                         <div class="button-inside">
                             <input oninput="onInputText('1')" class="text-input1" placeholder="Type text">
-                            <button class="erase-btn" onclick="eraseText(this, '1')">X</button>
+                            <button class="erase-btn" onclick="onEraseText(this, '1')">X</button>
                         </div>
                         <br>
                         </button>

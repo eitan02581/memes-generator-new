@@ -21,13 +21,15 @@ function initGmeme() {
             align: 'center',
             color: '#fff',
             posX: 50,
-            posY: 50
+            posY: 50,
+            font: 'Arial'
         }, {
             line: '',
             size: 50,
             align: 'center',
             color: '#000',
             posX: 50,
+            font: 'Arial'
         }]
     }
 }
@@ -102,4 +104,11 @@ function onFontSizeChange(i, type) {
 
 
 //TODO: funct to move text by x y pos
-//TODO: funct to DELETE TEXT
+
+function onEraseText(elText, elInput) {
+    eraseText(elText, elInput);
+}
+
+function onChangeFont(elFont) {
+    changeFont(elFont);
+}
