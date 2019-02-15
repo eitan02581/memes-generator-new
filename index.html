@@ -33,11 +33,16 @@
                         <button> <input type="file" name="image" onchange="onFileInputChange(event)" />
                         </button>
                         <input onchange="onTextColor('0',this)" type="color">
+                        <select onchange="onFontSelect('0' , this) , onInputText('0')" class="select-font">
+                            <option value="Ariel">Ariel</option>
+                            <option value="cursive">cursive</option>
+                            <option value="Courier">Courier</option>
+                        </select>
                         <button class="controller-btn" onclick="onFontSizeChange('0','+')">+</button>
                         <button class="controller-btn" onclick="onFontSizeChange('0','-')">-</button>
-                        <button class="controller-btn">left</button>
-                        <button class="controller-btn">center</button>
-                        <button class="controller-btn">right</button>
+                        <button class="controller-btn" onclick="onAlignText('0','left') , onInputText('0')">left</button>
+                        <button class="controller-btn" onclick="onAlignText('0','center') , onInputText('0')">center</button>
+                        <button class="controller-btn" onclick="onAlignText('0','right') , onInputText('0')">right</button>
                     </div>
                     <div class="controller">
                         <div class="button-inside">
@@ -47,14 +52,21 @@
                         <br>
                         </button>
                         <input onchange="onTextColor('1',this)" type="color">
+                        <select onchange="onFontSelect('1' , this) , onInputText('1')" class="select-font">
+                            <option value="Ariel">Ariel</option>
+                            <option value="cursive">cursive</option>
+                            <option value="Courier">Courier</option>
+                        </select>
                         <button class="controller-btn" onclick="onFontSizeChange('1','+')">+</button>
                         <button class="controller-btn" onclick="onFontSizeChange('1','-')">-</button>
-                        <button class="controller-btn">left</button>
-                        <button class="controller-btn">center</button>
-                        <button class="controller-btn">right</button>
+                        <button class="controller-btn" onclick="onAlignText('1','left')  , onInputText('1')">left</button>
+                        <button class="controller-btn" onclick="onAlignText('1','center') , onInputText('1')">center</button>
+                        <button class="controller-btn" onclick="onAlignText('1','right') , onInputText('1')">right</button>
                     </div>
                     <div class="final-stage">
-                        <button class="controller-btn">Save</button>
+                        <button class="controller-btn"><a href="#" onclick="downloadImg(this)" download="my-img.jpg">
+                                Save
+                            </a></button>
                         <button class="controller-btn">Share</button>
                     </div>
                 </div>
@@ -64,8 +76,7 @@
         <section class="gallery-section">
             <h1>Choose a pic</h1>
             <div class="memes-search">
-                <input type="text" id="myInput" onkeyup="keyWordSearch()" placeholder="Search by keywords.."
-                    title="Type in a name">
+                <input type="text" id="myInput" onkeyup="keyWordSearch()" placeholder="Search by keywords.." title="Type in a name">
             </div>
             <div class="grid-wrapper">
                 <div class="grid-container"></div>

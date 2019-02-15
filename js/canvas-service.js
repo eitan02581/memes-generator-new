@@ -43,4 +43,9 @@ function eraseText(elErase, inputBoxNum) {
     inputText(inputBoxNum);
 }
 
+
+function downloadImg(elLink) {
+    var imgContent = gCanvas.toDataURL('image/jpg');
+    elLink.href = imgContent
+}
 // TODO: add the file to img arr
