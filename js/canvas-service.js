@@ -32,4 +32,9 @@ function handleImageFromInput(ev, onImageReady) {
     reader.readAsDataURL(ev.target.files[0]);
 }
 
+function eraseText(elErase, inputBoxNum) {
+    elErase.previousElementSibling.value = '';
+    inputText(inputBoxNum);
+}
+
 // TODO: add the file to img arr

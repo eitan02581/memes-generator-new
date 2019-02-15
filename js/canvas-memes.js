@@ -35,22 +35,22 @@ function initGmeme() {
 
 
 function convertImageToCanvas(id) {
-    clearCtx()
-    gMeme.selectedImgId = id
+    clearCtx();
+    gMeme.selectedImgId = id;
     var image = document.getElementById(`${id}`);
     gCanvas.width = image.naturalWidth;
     gCanvas.height = image.naturalHeight;
     gCtx.drawImage(image, 0, 0);
 
     // set the heigth of the text of the second input text
-    gMeme.txts[1].posY = gCanvas.height - 50
+    gMeme.txts[1].posY = gCanvas.height - 50;
 }
 
 // -------------------------------bar controller-------------------------
 function onInputText(i) {
     // clearCtx()
     // if (gMeme.selectedImgId) convertImageToCanvas(gMeme.selectedImgId)
-    inputText(+i)
+    inputText(+i);
 }
 
 function clearCtx() {
@@ -59,30 +59,30 @@ function clearCtx() {
 
 function renderText() {
     // clear old text , render img + new text
-    clearCtx()
-    if (gMeme.selectedImgId) convertImageToCanvas(gMeme.selectedImgId)
+    clearCtx();
+    if (gMeme.selectedImgId) convertImageToCanvas(gMeme.selectedImgId);
 
-    var textItem = gMeme.txts
+    var textItem = gMeme.txts;
     // make sure  to render all existing texts 
     textItem.forEach(txtItem => {
         gCtx.font = `${txtItem.size}px Arial`;
         //TODO: fix the stroke color inside
         gCtx.strokeStyle = txtItem.color;
-        gCtx.strokeText(txtItem.line, txtItem.posX, txtItem.posY)
+        gCtx.strokeText(txtItem.line, txtItem.posX, txtItem.posY);
     });
 }
 
 function onTextColor(i, hexColor) {
-    var color = hexColor.value
+    var color = hexColor.value;
     gCtx.fillStyle = `${color}`;
     gMeme.txts[i].color = `${color}`;
-    inputText(+i)
+    inputText(+i);
 }
 
 function onFontSizeChange(i, type) {
-    if (type === '+') gMeme.txts[i].size = gMeme.txts[i].size + 5
-    else gMeme.txts[i].size = gMeme.txts[i].size - 5
-    inputText(+i)
+    if (type === '+') gMeme.txts[i].size = gMeme.txts[i].size + 5;
+    else gMeme.txts[i].size = gMeme.txts[i].size - 5;
+    inputText(+i);
 }
 // -----------------------canvas click funcs------------------
 // function canvasClicked(ev) {

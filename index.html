@@ -11,7 +11,7 @@
 
 <body onload="init()">
     <header>
-        <h1>welcome to our memes generator</h1>
+        <h1>Welcome to our memes generator</h1>
     </header>
     <!-- canvas -->
     <!-- <input type="file" name="image" onchange="onFileInputChange(event)" /> -->
@@ -25,7 +25,10 @@
                 <!-- side bar -->
                 <div class="bar-wrapper">
                     <div class="controller">
-                        <input  oninput="onInputText('0')" class="text-input0" placeholder="Type text">
+                        <div class="button-inside">
+                            <input oninput="onInputText('0')" class="text-input0" placeholder="Type text">
+                            <button class="erase-btn" onclick="eraseText(this, '0')">X</button>
+                        </div>
                         <br>
                         <button> <input type="file" name="image" onchange="onFileInputChange(event)" />
                         </button>
@@ -37,7 +40,10 @@
                         <button class="controller-btn">right</button>
                     </div>
                     <div class="controller">
-                        <input oninput="onInputText('1')" class="text-input1" placeholder="Type text">
+                        <div class="button-inside">
+                            <input oninput="onInputText('1')" class="text-input1" placeholder="Type text">
+                            <button class="erase-btn" onclick="eraseText(this, '1')">X</button>
+                        </div>
                         <br>
                         </button>
                         <input onchange="onTextColor('1',this)" type="color">
@@ -58,7 +64,8 @@
         <section class="gallery-section">
             <h1>Choose a pic</h1>
             <div class="memes-search">
-                <input type="text" id="myInput" onkeyup="keyWordSearch()" placeholder="Search for names.." title="Type in a name">
+                <input type="text" id="myInput" onkeyup="keyWordSearch()" placeholder="Search by keywords.."
+                    title="Type in a name">
             </div>
             <div class="grid-wrapper">
                 <div class="grid-container"></div>
