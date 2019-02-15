@@ -1,6 +1,6 @@
 'use setrict'
 var gCanvas;
-var gCtx
+var gCtx;
 // to fill gmeme in a better place
 var gMeme
 
