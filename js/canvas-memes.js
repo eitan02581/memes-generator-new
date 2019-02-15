@@ -1,6 +1,6 @@
 'use setrict'
 var gCanvas;
-var gCtx
+var gCtx;
 // to fill gmeme in a better place
 var gMeme = {
     selectedImgId: '',
@@ -21,12 +21,12 @@ function initCanvas() {
     gCanvas = document.querySelector('#img-canvas');
     gCtx = gCanvas.getContext('2d');
     gCanvas.width = 600;
-    gCanvas.height = 300
+    gCanvas.height = 300;
 }
 
 function convertImageToCanvas(id) {
-    clearCtx()
-    gMeme.selectedImgId = id
+    clearCtx();
+    gMeme.selectedImgId = id;
 
     var image = document.getElementById(`${id}`);
     gCanvas.width = image.naturalWidth;
@@ -35,9 +35,9 @@ function convertImageToCanvas(id) {
 }
 
 function onInputText() {
-    clearCtx()
-    if (gMeme.selectedImgId) convertImageToCanvas(gMeme.selectedImgId)
-    inputText()
+    clearCtx();
+    if (gMeme.selectedImgId) convertImageToCanvas(gMeme.selectedImgId);
+    inputText();
 }
 
 function clearCtx() {
@@ -47,12 +47,12 @@ function clearCtx() {
 function renderText(lineText) {
     gCtx.font = "70px Arial";
     gCtx.fillStyle = gMeme.color;
-    gCtx.fillText(lineText, 50, 50)
+    gCtx.fillText(lineText, 50, 50);
 }
 
 function onTextColor(hexColor) {
-    var color = hexColor.value
+    var color = hexColor.value;
     gCtx.fillStyle = `${color}`;
     gMeme.color = `${color}`;
-    inputText()
+    inputText();
 }
