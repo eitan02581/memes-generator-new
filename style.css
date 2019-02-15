@@ -12,6 +12,15 @@ body {
     padding: 0;
 }
 
+h1 {
+    text-align: center;
+}
+
+.memes-search {
+    display: flex;
+    justify-content: center;
+}
+
 main {
     display: flex;
     justify-content: center;
@@ -129,4 +138,35 @@ canvas {
     background-color: white;
     color: #812222;
 
+}
+
+.button-inside {
+    position: relative;
+}
+
+.erase-btn {
+    position: absolute;
+    right: 12px;
+    top: 3px;
+    border: none;
+    height: 20px;
+    width: 20px;
+    border-radius: 100%;
+    outline: none;
+    text-align: center;
+    font-weight: bold;
+    padding: 2px;
+}
+
+.erase-btn:hover {
+    cursor: pointer;
+}
+
+.button-inside input {
+    height:25px;
+    width: 90%;
+    padding-left: 10px;
+    border-radius: 4px;
+    border: none;
+    outline: none;
 }
