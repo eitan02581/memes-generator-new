@@ -1,3 +1,5 @@
+var gInputImgEv
+
 function inputText(i) {
     var text = document.querySelector(`.text-input${i}`).value;
     gMeme.txts[i].line = text
@@ -8,16 +10,20 @@ function inputText(i) {
 //UPLOAD IMG WITH INPUT FILE 
 
 function onFileInputChange(ev) {
-    handleImageFromInput(ev, renderCanvas)
+    handleImageFromInput(ev)
 }
 
-function renderCanvas(img) {
-    gCanvas.width = img.width;
-    gCanvas.height = img.height;
-    gCtx.drawImage(img, 0, 0);
-}
+// function renderCanvas(img) {
+//     gCanvas.width = img.width;
+//     gCanvas.height = img.height;
+//     gCtx.drawImage(img, 0, 0);
+// }
 
 function handleImageFromInput(ev, onImageReady) {
+//    reset the selected img id ( from the first pic)
+    gMeme.selectedImgId = ''
+    gInputImgEv = ev
+    clearCtx()
     var reader = new FileReader();
 
     reader.onload = function (ev) {

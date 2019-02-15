@@ -41,7 +41,6 @@ function convertImageToCanvas(id) {
     gCanvas.width = image.naturalWidth;
     gCanvas.height = image.naturalHeight;
     gCtx.drawImage(image, 0, 0);
-
     // set the heigth of the text of the second input text
     gMeme.txts[1].posY = gCanvas.height - 50
 }
@@ -50,6 +49,7 @@ function convertImageToCanvas(id) {
 function onInputText(i) {
     // clearCtx()
     // if (gMeme.selectedImgId) convertImageToCanvas(gMeme.selectedImgId)
+    
     inputText(+i)
 }
 
@@ -61,10 +61,11 @@ function renderText() {
     // clear old text , render img + new text
     clearCtx()
     if (gMeme.selectedImgId) convertImageToCanvas(gMeme.selectedImgId)
-
+    // TODO: fix the rendering text problem on input image
+    else handleImageFromInput(gInputImgEv)
     var textItem = gMeme.txts
     // make sure  to render all existing texts 
-    textItem.forEach(txtItem => {
+    textItem.forEach(txtItem => {        
         gCtx.font = `${txtItem.size}px Arial`;
         //TODO: fix the stroke color inside
         gCtx.strokeStyle = txtItem.color;
