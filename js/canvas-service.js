@@ -3,9 +3,7 @@ var gInputImgEv
 function inputText() {
     var text = document.querySelector(`.text-input`).value;
     // set text for the first line
-     gSelectedTextItem.line = text;
-    // set text to the clicked one
-    // else gSelectedTextItem.line = text
+    gSelectedTextItem.line = text;
     renderText()
 }
 

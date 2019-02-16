@@ -21,6 +21,9 @@ function initCanvas() {
     setEvents()
     // TODO: THINK ABOUT A BETTER OPTION TO RENDER THE SECOND LINE HEIGHT
     setTimeout(() => {
+        onAlignText('center')
+    }, 200);
+    setTimeout(() => {
         setBottomTextMeasure()
     }, 1000);
 }
@@ -33,7 +36,7 @@ function initGmeme() {
             line: '',
             font: 'Ariel',
             size: 50,
-            align: '',
+            align: 'center',
             color: '#fff',
             posX: 50,
             posY: 50,
@@ -63,8 +66,6 @@ function convertImageToCanvas(id) {
 
 // -------------------------------bar controller-------------------------
 function onInputText() {
-    // clearCtx()
-    // if (gMeme.selectedImgId) convertImageToCanvas(gMeme.selectedImgId)
     inputText()
 }
 
@@ -78,15 +79,18 @@ function renderText() {
     if (gMeme.selectedImgId) convertImageToCanvas(gMeme.selectedImgId)
     // TODO: fix the rendering text problem on input file image
     else handleImageFromInput(gInputImgEv)
+    // render all existing texts 
     var textItem = gMeme.txts
-    // makes sure  to render all existing texts 
     textItem.forEach((txtItem, i) => {
         gCtx.font = `${txtItem.size}px ${txtItem.font}`;
         //TODO: fix the stroke color inside
-        onAlignText(i, txtItem.align)
+        // onAlignText(i, txtItem.align)
+        // ctx.fillStyle = '#FFA500';
+        // gCtx.lineWidth = 2
+        // gCtx.fillStyle = 'red'
         gCtx.strokeStyle = txtItem.color;
         gCtx.strokeText(txtItem.line, txtItem.posX, txtItem.posY);
-        onAlignText(i, txtItem.align)
+        // onAlignText(i, txtItem.align)
     });
 }
 
@@ -136,6 +140,7 @@ function onEraseText(elText) {
 
 function setBottomTextMeasure() {
     gMeme.txts[1].posY = gCanvas.height - 50;
+
 }
 
 function getMousePosRelative(ev) {
@@ -158,14 +163,15 @@ function onAddLine() {
     gTxtItemIdx++
     if (gTxtItemIdx > 1) gMeme.txts.push(createTxtObj());
     gSelectedTextItem = gMeme.txts[gTxtItemIdx]
-    fillTextItemLine()
+    initNewTextItem()
     // clean the input field on new line
     document.querySelector('.text-input').value = '';
     renderText()
 }
 
-function fillTextItemLine() {
+function initNewTextItem() {
     gSelectedTextItem.line = 'New Line'
+    onAlignText('center')
 }
 
 
