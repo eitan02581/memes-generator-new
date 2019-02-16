@@ -10,12 +10,11 @@ function initGrid() {
 }
 
 function createImage(url, tags) {
-    var image = {
+    return {
         url: url,
         id: idGenerator(),
         tags: tags
     }
-    return image;
 }
 
 function createImages() {
@@ -48,14 +47,18 @@ function createImages() {
 
 function renderGrid(images) {
     var strHTML = images.map(function (image) {
-        return `<div > <img id="${image.id}"  onclick="convertImageToCanvas('${image.id}') , onDispSection()"  class="image-render-style" src="${image.url}" alt=""> </div>`
+        return `<div > <img id="${image.id}"  onclick="  onDispCanvas('${image.id}')"  class="image-render-style" src="${image.url}" alt=""> </div>`
     });
     var str = strHTML.join('');
     document.querySelector('.grid-container').innerHTML = str.split('>,<').join('><');
 }
 
 function createKeyWord(word) {
-    var keyWord = { word: word, popularity: 1, fontSize: 12 }
+    var keyWord = {
+        word: word,
+        popularity: 1,
+        fontSize: 12
+    }
     return keyWord;
 }
 
