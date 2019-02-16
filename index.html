@@ -12,6 +12,10 @@
 </head>
 
 <body onload="init()">
+    <nav class="navbar">
+        <div class="nav-item">About us</div>
+        <div class="nav-item">Contact us</div>
+    </nav>
     <header>
         <h1>Welcome to our memes generator</h1>
     </header>
@@ -27,29 +31,43 @@
                 <!-- side bar -->
                 <div class="bar-wrapper">
                     <div class="controller">
+                        <input type="file" name="image" onchange="onFileInputChange(event)" />
                         <div class="button-inside">
                             <input oninput="onInputText('0')" class="text-input0" placeholder="Type text">
-                            <button class="erase-btn" onclick="eraseText(this, '0')">X</button>
+                            <button class="erase-btn" onclick="onEraseText(this, '0')">X</button>
                         </div>
                         <br>
-                        <button> <input type="file" name="image" onchange="onFileInputChange(event)" />
-                        </button>
                         <input onchange="onTextColor('0',this)" type="color">
                         <select onchange="onFontSelect('0' , this) , onInputText('0')" class="select-font">
                             <option value="Ariel">Ariel</option>
                             <option value="cursive">cursive</option>
                             <option value="Courier">Courier</option>
+                            <option value="Sans Serif" selected>Sans Serif</option>
+                            <option value="Comic Sans MS">Comic Sans MS</option>
+                            <option value="Times New Roman">Times New Roman</option>
+                            <option value="Courier New">Courier New</option>
+                            <option value="Verdana">Verdana</option>
+                            <option value="Trebuchet MS">Trebuchet MS</option>
+                            <option value="Arial Black">Arial Black</option>
+                            <option value="Impact">Impact</option>
+                            <option value="Bookman">Bookman</option>
+                            <option value="Garamond">Garamond</option>
+                            <option value="Palatino">Palatino</option>
+                            <option value="Georgia">Georgia</option>
                         </select>
                         <button class="controller-btn" onclick="onFontSizeChange('0','+')">+</button>
                         <button class="controller-btn" onclick="onFontSizeChange('0','-')">-</button>
-                        <button class="controller-btn" onclick="onAlignText('0','left') , onInputText('0')">left</button>
-                        <button class="controller-btn" onclick="onAlignText('0','center') , onInputText('0')">center</button>
-                        <button class="controller-btn" onclick="onAlignText('0','right') , onInputText('0')">right</button>
+                        <button class="controller-btn"
+                            onclick="onAlignText('0','left') , onInputText('0')">left</button>
+                        <button class="controller-btn"
+                            onclick="onAlignText('0','center') , onInputText('0')">center</button>
+                        <button class="controller-btn"
+                            onclick="onAlignText('0','right') , onInputText('0')">right</button>
                     </div>
                     <div class="controller">
                         <div class="button-inside">
                             <input oninput="onInputText('1')" class="text-input1" placeholder="Type text">
-                            <button class="erase-btn" onclick="eraseText(this, '1')">X</button>
+                            <button class="erase-btn" onclick="onEraseText(this, '1')">X</button>
                         </div>
                         <br>
                         </button>
@@ -58,12 +76,27 @@
                             <option value="Ariel">Ariel</option>
                             <option value="cursive">cursive</option>
                             <option value="Courier">Courier</option>
+                            <option value="Sans Serif" selected>Sans Serif</option>
+                            <option value="Comic Sans MS">Comic Sans MS</option>
+                            <option value="Times New Roman">Times New Roman</option>
+                            <option value="Courier New">Courier New</option>
+                            <option value="Verdana">Verdana</option>
+                            <option value="Trebuchet MS">Trebuchet MS</option>
+                            <option value="Arial Black">Arial Black</option>
+                            <option value="Impact">Impact</option>
+                            <option value="Bookman">Bookman</option>
+                            <option value="Garamond">Garamond</option>
+                            <option value="Palatino">Palatino</option>
+                            <option value="Georgia">Georgia</option>
                         </select>
                         <button class="controller-btn" onclick="onFontSizeChange('1','+')">+</button>
                         <button class="controller-btn" onclick="onFontSizeChange('1','-')">-</button>
-                        <button class="controller-btn" onclick="onAlignText('1','left')  , onInputText('1')">left</button>
-                        <button class="controller-btn" onclick="onAlignText('1','center') , onInputText('1')">center</button>
-                        <button class="controller-btn" onclick="onAlignText('1','right') , onInputText('1')">right</button>
+                        <button class="controller-btn"
+                            onclick="onAlignText('1','left')  , onInputText('1')">left</button>
+                        <button class="controller-btn"
+                            onclick="onAlignText('1','center') , onInputText('1')">center</button>
+                        <button class="controller-btn"
+                            onclick="onAlignText('1','right') , onInputText('1')">right</button>
                     </div>
                     <div class="final-stage">
                         <button class="controller-btn"><a href="#" onclick="downloadImg(this)" download="my-img.jpg">
@@ -77,14 +110,23 @@
         <!-- gallery -->
         <section class="gallery-section">
             <h1>Choose a pic</h1>
+            <div class="pop-words">
+                <div class="pop-word word1" onclick="searchElectedWord(this)"></div>
+                <div class="pop-word word2" onclick="searchElectedWord(this)"></div>
+                <div class="pop-word word3" onclick="searchElectedWord(this)"></div>
+                <div class="pop-word word4" onclick="searchElectedWord(this)"></div>
+                <div class="pop-word word5" onclick="searchElectedWord(this)"></div>
+            </div>
             <div class="memes-search">
-                <input type="text" id="myInput" onkeyup="keyWordSearch()" placeholder="Search by keywords.." title="Type in a name">
+                <input type="text" id="myInput" onkeyup="keyWordSearch()" placeholder="Search by keywords.."
+                    title="Type in a name">
             </div>
             <div class="grid-wrapper">
                 <div class="grid-container"></div>
             </div>
         </section>
     </main>
+    <!-- <footer class="page-footer"></footer> -->
 
     <script src="lib/jquery/jquery.min.js"></script>
     <script src="js/canvas-service.js"></script>

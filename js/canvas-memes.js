@@ -31,7 +31,8 @@ function initGmeme() {
             align: '',
             color: '#fff',
             posX: 50,
-            posY: 50
+            posY: 50,
+            font: 'Arial'
         }, {
             isDraggable: false,
             line: '',
@@ -40,7 +41,6 @@ function initGmeme() {
             align: '',
             color: '#000',
             posX: 50,
-
         }]
     }
 }
@@ -232,4 +232,11 @@ function checkIfText() {
 
 
 //TODO: funct to move text by x y pos
-//TODO: funct to DELETE TEXT
+
+function onEraseText(elText, elInput) {
+    eraseText(elText, elInput);
+}
+
+function onChangeFont(elFont) {
+    changeFont(elFont);
+}

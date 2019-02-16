@@ -1,8 +1,11 @@
 var gImages = [];
+var gKeyWords = [];
+var gMostPop = [];
 
 function initGrid() {
     createImages();
-
+    createKeyWords();
+    findMostPop();
     renderGrid(gImages);
 }
 
@@ -17,7 +20,7 @@ function createImage(url, tags) {
 
 function createImages() {
     gImages.push(createImage("meme-imgs/img12.jpg", ['basketball', 'kiss']));
-    gImages.push(createImage("meme-imgs/img2.jpg", ['dance', 'nature']));
+    gImages.push(createImage("meme-imgs/2.jpg", ['dance', 'nature']));
     gImages.push(createImage("meme-imgs/003.jpg", ['trump', 'happy']));
     gImages.push(createImage("meme-imgs/004.jpg", ['animal', 'dog', 'kiss']));
     gImages.push(createImage("meme-imgs/005.jpg", ['animal', 'dog', 'baby', 'sleep']));
@@ -46,7 +49,48 @@ function createImages() {
 function renderGrid(images) {
     var strHTML = images.map(function (image) {
         return `<div > <img id="${image.id}"  onclick="convertImageToCanvas('${image.id}') , onDispSection()"  class="image-render-style" src="${image.url}" alt=""> </div>`
-    })
-    var str = strHTML.join('')
-    document.querySelector('.grid-container').innerHTML = str.split('>,<').join('><')
+    });
+    var str = strHTML.join('');
+    document.querySelector('.grid-container').innerHTML = str.split('>,<').join('><');
+}
+
+function createKeyWord(word) {
+    var keyWord = { word: word, popularity: 1, fontSize: 12 }
+    return keyWord;
+}
+
+function createKeyWords() {
+    gKeyWords.push(createKeyWord('basketball'));
+    gKeyWords.push(createKeyWord('kiss'));
+    gKeyWords.push(createKeyWord('dance'));
+    gKeyWords.push(createKeyWord('nature'));
+    gKeyWords.push(createKeyWord('trump'));
+    gKeyWords.push(createKeyWord('happy'));
+    gKeyWords.push(createKeyWord('animal'));
+    gKeyWords.push(createKeyWord('dog'));
+    gKeyWords.push(createKeyWord('baby'));
+    gKeyWords.push(createKeyWord('sleep'));
+    gKeyWords.push(createKeyWord('cat'));
+    gKeyWords.push(createKeyWord('computer'));
+    gKeyWords.push(createKeyWord('bowtie'));
+    gKeyWords.push(createKeyWord('man'));
+    gKeyWords.push(createKeyWord('point'));
+    gKeyWords.push(createKeyWord('crazy'));
+    gKeyWords.push(createKeyWord('yelling'));
+    gKeyWords.push(createKeyWord('big'));
+    gKeyWords.push(createKeyWord('drevil'));
+    gKeyWords.push(createKeyWord('kids'));
+    gKeyWords.push(createKeyWord('dancing'));
+    gKeyWords.push(createKeyWord('yoga'));
+    gKeyWords.push(createKeyWord('obama'));
+    gKeyWords.push(createKeyWord('leo'));
+    gKeyWords.push(createKeyWord('cheers'));
+    gKeyWords.push(createKeyWord('matrix'));
+    gKeyWords.push(createKeyWord('talking'));
+    gKeyWords.push(createKeyWord('oprah'));
+    gKeyWords.push(createKeyWord('patrick'));
+    gKeyWords.push(createKeyWord('star'));
+    gKeyWords.push(createKeyWord('putin'));
+    gKeyWords.push(createKeyWord('speech'));
+    gKeyWords.push(createKeyWord('toystory'));
 }

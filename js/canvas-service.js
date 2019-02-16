@@ -2,7 +2,7 @@ var gInputImgEv
 
 function inputText(i) {
     var text = document.querySelector(`.text-input${i}`).value;
-    gMeme.txts[i].line = text
+    gMeme.txts[i].line = text;
     renderText()
 }
 
