@@ -20,7 +20,7 @@ function onFileInputChange(ev) {
 // }
 
 function handleImageFromInput(ev, onImageReady) {
-//    reset the selected img id ( from the first pic)
+    //    reset the selected img id ( from the first pic)
     gMeme.selectedImgId = ''
     gInputImgEv = ev
     clearCtx()
