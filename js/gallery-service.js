@@ -4,14 +4,6 @@ var gImages = [];
 var gKeyWords = [];
 var gMostPop = [];
 
-function initGrid() {
-    createImages();
-    createKeyWords();
-    findMostPop();
-    renderGrid(gImages);
-    renderUL();
-}
-
 function createImage(url, tags) {
     return {
         url: url,
@@ -21,31 +13,31 @@ function createImage(url, tags) {
 }
 
 function createImages() {
-    gImages.push(createImage("meme-imgs/img12.jpg", ['basketball', 'kiss']));
-    gImages.push(createImage("meme-imgs/2.jpg", ['dance', 'nature']));
-    gImages.push(createImage("meme-imgs/003.jpg", ['trump', 'happy']));
-    gImages.push(createImage("meme-imgs/004.jpg", ['animal', 'dog', 'kiss']));
-    gImages.push(createImage("meme-imgs/005.jpg", ['animal', 'dog', 'baby', 'sleep']));
-    gImages.push(createImage("meme-imgs/5.jpg", ['baby', 'happy', 'nature']));
-    gImages.push(createImage("meme-imgs/006.jpg", ['cat', 'animal', 'computer', 'sleep']));
-    gImages.push(createImage("meme-imgs/8.jpg", ['bowtie', 'happy']));
-    gImages.push(createImage("meme-imgs/9.jpg", ['baby', 'nature', 'happy']));
-    gImages.push(createImage("meme-imgs/12.jpg", ['man', 'point']));
-    gImages.push(createImage("meme-imgs/19.jpg", ['man', 'crazy', 'yelling']));
-    gImages.push(createImage("meme-imgs/Ancient-Aliens.jpg", ['man', 'big', 'happy']));
-    gImages.push(createImage("meme-imgs/drevil.jpg", ['man', 'drevil']));
-    gImages.push(createImage("meme-imgs/img2.jpg", ['kids', 'nature', 'dancing']));
-    gImages.push(createImage("meme-imgs/img4.jpg", ['trump', 'point']));
-    gImages.push(createImage("meme-imgs/img5.jpg", ['baby', 'crazy']));
-    gImages.push(createImage("meme-imgs/img6.jpg", ['animal', 'dog', 'yoga']));
-    gImages.push(createImage("meme-imgs/img11.jpg", ['man', 'obama', 'happy']));
-    gImages.push(createImage("meme-imgs/leo.jpg", ['leo', 'cheers', 'happy']));
-    gImages.push(createImage("meme-imgs/meme1.jpg", ['man', 'matrix']));
-    gImages.push(createImage("meme-imgs/One-Does-Not-Simply.jpg", ['man', 'talking']));
-    gImages.push(createImage("meme-imgs/Oprah-You-Get-A.jpg", ['oprah', 'happy']));
-    gImages.push(createImage("meme-imgs/patrick.jpg", ['patrick', 'happy', 'star']));
-    gImages.push(createImage("meme-imgs/putin.jpg", ['putin', 'man', 'speech']));
-    gImages.push(createImage("meme-imgs/X-Everywhere.jpg", ['toystory', 'happy', 'talking']));
+    gImages.push(createImage("meme-imgs/img12.jpg", ['basketball', 'kiss', 'כדורסל', 'נשיקה']));
+    gImages.push(createImage("meme-imgs/2.jpg", ['dance', 'nature', 'ריקוד', 'טבע']));
+    gImages.push(createImage("meme-imgs/003.jpg", ['trump', 'happy', 'טראמפ', 'שמח']));
+    gImages.push(createImage("meme-imgs/004.jpg", ['animal', 'dog', 'kiss', 'חיה', 'כלב', 'נשיקה']));
+    gImages.push(createImage("meme-imgs/005.jpg", ['animal', 'dog', 'baby', 'sleep', 'חיה', 'כלב', 'תינוק', 'שינה']));
+    gImages.push(createImage("meme-imgs/5.jpg", ['baby', 'happy', 'nature', 'תינוק', 'שמח', 'טבע']));
+    gImages.push(createImage("meme-imgs/006.jpg", ['cat', 'animal', 'computer', 'sleep', 'חתול', 'חיה', 'מחשב', 'שינה']));
+    gImages.push(createImage("meme-imgs/8.jpg", ['bowtie', 'happy', 'עניבה', 'שמח']));
+    gImages.push(createImage("meme-imgs/9.jpg", ['baby', 'nature', 'happy', 'תינוק', 'שמח', 'טבע']));
+    gImages.push(createImage("meme-imgs/12.jpg", ['man', 'point', 'איש', 'מצביע']));
+    gImages.push(createImage("meme-imgs/19.jpg", ['man', 'crazy', 'yelling', 'איש', 'משוגע', 'צועק']));
+    gImages.push(createImage("meme-imgs/Ancient-Aliens.jpg", ['man', 'big', 'happy', 'איש', 'גדול', 'שמח']));
+    gImages.push(createImage("meme-imgs/drevil.jpg", ['man', 'drevil', 'איש', 'דררשע']));
+    gImages.push(createImage("meme-imgs/img2.jpg", ['kids', 'nature', 'dancing', 'ילדים', 'טבע', 'ריקודים']));
+    gImages.push(createImage("meme-imgs/img4.jpg", ['trump', 'point', 'טראמפ', 'מצביע']));
+    gImages.push(createImage("meme-imgs/img5.jpg", ['baby', 'crazy', 'תינוק', 'משוגע']));
+    gImages.push(createImage("meme-imgs/img6.jpg", ['animal', 'dog', 'yoga', 'חיה', 'כלב', 'יוגה']));
+    gImages.push(createImage("meme-imgs/img11.jpg", ['man', 'obama', 'happy', 'איש', 'אובמה', 'שמח']));
+    gImages.push(createImage("meme-imgs/leo.jpg", ['leo', 'cheers', 'happy', 'ליו', 'לחיים', 'שמח']));
+    gImages.push(createImage("meme-imgs/meme1.jpg", ['man', 'matrix', 'איש', 'מטריקס']));
+    gImages.push(createImage("meme-imgs/One-Does-Not-Simply.jpg", ['man', 'talking', 'איש', 'מדבר']));
+    gImages.push(createImage("meme-imgs/Oprah-You-Get-A.jpg", ['oprah', 'happy', 'אופרה', 'שמח']));
+    gImages.push(createImage("meme-imgs/patrick.jpg", ['patrick', 'happy', 'star', 'פטריק', 'שמח', 'כוכב']));
+    gImages.push(createImage("meme-imgs/putin.jpg", ['putin', 'man', 'speech', 'פוטין', 'איש', 'נאום']));
+    gImages.push(createImage("meme-imgs/X-Everywhere.jpg", ['toystory', 'happy', 'talking', 'צעצועשלסיפור', 'שמח', 'מדבר']));
 }
 
 function createKeyWord(word) {

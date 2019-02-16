@@ -215,9 +215,21 @@ canvas {
     justify-content: space-evenly
 }
 
+.flex-column {
+    flex-direction: column;
+}
+
+.align-center {
+    align-items: center;
+}
+
 .hidden {
     display: none
 }
+
+/* .rtl {
+    direction: rtl;
+} */
 
 /* buttons  */
 

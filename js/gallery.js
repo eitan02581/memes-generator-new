@@ -1,3 +1,11 @@
+function initGrid() {
+    createImages();
+    createKeyWords();
+    findMostPop();
+    renderGrid(gImages);
+    renderUL();
+}
+
 function renderGrid(images) {
     var strHTML = images.map(function (image) {
         return `<div > <img id="${image.id}"  onclick="  onDispCanvas('${image.id}')"  class="image-render-style" src="${image.url}" alt=""> </div>`
@@ -9,7 +17,7 @@ function renderGrid(images) {
 function renderUL() {
     var strHTML = '';
     for (let i =0 ; i< gKeyWords.length; i++) {
-        strHTML += `<li onclick="searchElectedWord(this)"><a href="#">${gKeyWords[i].word}</a></li>`
+        strHTML += `<li onclick="searchElectedWord(this)"><a href="#" data-trans="tag-${gKeyWords[i].word}">${gKeyWords[i].word}</a></li>`
     }
     document.querySelector('#inputUL').innerHTML = strHTML;
 }
