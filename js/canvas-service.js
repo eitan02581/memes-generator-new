@@ -43,12 +43,9 @@ function eraseText(elErase, inputBoxNum) {
     inputText(inputBoxNum);
 }
 
-function changeFont(elSelect) {
-    var font = document.querySelector('.select-font').value;
-    gMeme.txts[elSelect].font = font;
-    
-    console.log(gMeme.txts[elSelect]);
-    
-}
 
+function downloadImg(elLink) {
+    var imgContent = gCanvas.toDataURL('image/jpg');
+    elLink.href = imgContent
+}
 // TODO: add the file to img arr

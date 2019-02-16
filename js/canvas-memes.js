@@ -17,6 +17,7 @@ function initGmeme() {
         selectedImgId: '',
         txts: [{
             line: '',
+            font: 'Ariel',
             size: 50,
             align: 'center',
             color: '#fff',
@@ -25,6 +26,7 @@ function initGmeme() {
             font: 'Arial'
         }, {
             line: '',
+            font: 'Ariel',
             size: 50,
             align: 'center',
             color: '#000',
@@ -51,7 +53,7 @@ function convertImageToCanvas(id) {
 function onInputText(i) {
     // clearCtx()
     // if (gMeme.selectedImgId) convertImageToCanvas(gMeme.selectedImgId)
-    
+
     inputText(+i)
 }
 
@@ -66,12 +68,15 @@ function renderText() {
     // TODO: fix the rendering text problem on input image
     else handleImageFromInput(gInputImgEv)
     var textItem = gMeme.txts
-    // make sure  to render all existing texts 
-    textItem.forEach(txtItem => {        
-        gCtx.font = `${txtItem.size}px Arial`;
+    // makes sure  to render all existing texts 
+    textItem.forEach((txtItem, i) => {
+        gCtx.font = `${txtItem.size}px ${txtItem.font}`;
         //TODO: fix the stroke color inside
+        // update the pos x  before writing
+        onAlignText(i, txtItem.align)
         gCtx.strokeStyle = txtItem.color;
         gCtx.strokeText(txtItem.line, txtItem.posX, txtItem.posY);
+        onAlignText(i, txtItem.align)
     });
 }
 
@@ -86,6 +91,31 @@ function onFontSizeChange(i, type) {
     if (type === '+') gMeme.txts[i].size = gMeme.txts[i].size + 5;
     else gMeme.txts[i].size = gMeme.txts[i].size - 5;
     inputText(+i);
+}
+
+function onAlignText(i, direction) {
+    var txtItem = gMeme.txts[i]
+    txtItem.align = direction
+    switch (direction) {
+        case 'left':
+            txtItem.posX = 0;
+            break;
+        case 'center':
+            txtItem.posX = (gCanvas.width / 2) - (gCtx.measureText(txtItem.line).width / 2);
+            break;
+        case 'right':
+            txtItem.posX = gCanvas.width - gCtx.measureText(txtItem.line).width;
+            break;
+    }
+}
+
+function onFontSelect(i, el) {
+    var font = el.value;
+    gMeme.txts[i].font = font
+}
+
+function onSaveImage(elLink) {
+    downloadImg(elLink)
 }
 // -----------------------canvas click funcs------------------
 // function canvasClicked(ev) {
