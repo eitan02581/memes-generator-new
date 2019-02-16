@@ -54,7 +54,12 @@ main {
 .memes-playground-container {
     height: 50%;
     width: 100%;
+}
 
+@media (max-width: 768px) {
+    .memes-playground-container {
+        flex-direction: column;
+    }
 }
 
 /* canvas */
