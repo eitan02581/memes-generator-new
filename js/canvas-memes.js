@@ -2,10 +2,12 @@
 var gCanvas;
 var gCtx;
 var gMeme
+
 // indicate mouse's place
-var gisDragging
 var gStartX
 var gStartY
+
+
 
 function initCanvas() {
     gCanvas = document.querySelector('#img-canvas');
@@ -40,7 +42,8 @@ function initGmeme() {
             size: 50,
             align: '',
             color: '#000',
-            posX: 50,
+            posX: 50
+
         }]
     }
 }
@@ -54,7 +57,6 @@ function convertImageToCanvas(id) {
     gCanvas.width = image.naturalWidth;
     gCanvas.height = image.naturalHeight;
     gCtx.drawImage(image, 0, 0);
-    // set the heigth of the text of the second input text
 }
 
 
@@ -125,6 +127,10 @@ function onSaveImage(elLink) {
     downloadImg(elLink)
 }
 
+function onEraseText(elText, elInput) {
+    eraseText(elText, elInput);
+}
+
 
 // -------------------------------x and y positions-------------------------
 
@@ -159,12 +165,16 @@ function setEvents() {
 function mouseDownEvent(ev) {
     isThereText = checkIfText()
     if (isThereText === undefined) return
-    gisDragging = true
-    // TODO: fix the erorr by return if txtItem line is empty 
+
+    // TODO: fix the erorr (of toggle draggble txt func) by return if txtItem line is empty 
     var mouseStartPos = getMousePosRelative(ev)
     gStartX = mouseStartPos.x
     gStartY = mouseStartPos.y
     // set drag = true to the specific texitem 
+    setSelectedTextDraggable(ev)
+}
+
+function setSelectedTextDraggable(ev) {
     gMeme.txts.forEach((txtItem) => {
         if (ev.offsetX > txtItem.posX &&
             ev.offsetX < (txtItem.posX + gCtx.measureText(txtItem.line).width) &&
@@ -173,6 +183,7 @@ function mouseDownEvent(ev) {
             ev.offsetY < txtItem.posY)
             toggleTextDraggable(txtItem, 'true')
     })
+
 }
 
 function mouseMoveEvent(ev) {
@@ -180,6 +191,7 @@ function mouseMoveEvent(ev) {
     var draggableTxtItem = getDraggableTxtItem()
     if (!draggableTxtItem) return
     draggableTxtItem.align = ''
+
     // get mouse cur pos relative to canvas
     var mouseCurPos = getMousePosRelative(ev)
     mouseCurX = mouseCurPos.x
@@ -214,6 +226,9 @@ function mouseOutEvent() {
     toggleTextDraggable(draggableItem, 'false')
 }
 
+
+// helpers func
+
 function getDraggableTxtItem() {
     return gMeme.txts.find((txtItem) => {
         return txtItem.isDraggable === true
@@ -228,15 +243,4 @@ function checkIfText() {
     return gMeme.txts.find(txtItem => {
         return txtItem.line !== ''
     })
-}
-
-
-//TODO: funct to move text by x y pos
-
-function onEraseText(elText, elInput) {
-    eraseText(elText, elInput);
-}
-
-function onChangeFont(elFont) {
-    changeFont(elFont);
 }
