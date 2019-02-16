@@ -1,70 +1,102 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="style.css">
-    <link rel="shortcut icon" type="image/png" href="http://www.flagblvd.com/wp-content/uploads/2015/09/israeli-flag-medium-570x600.png" />
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="shortcut icon"
+      type="image/png"
+      href="http://www.flagblvd.com/wp-content/uploads/2015/09/israeli-flag-medium-570x600.png"
+    />
 
     <title>Memes-Generator</title>
-</head>
+  </head>
 
-<body onload="init()">
+  <body onload="init()">
     <nav class="navbar">
-        <div class="nav-item">About us</div>
-        <div class="nav-item">Contact us</div>
+      <div class="nav-item">About us</div>
+      <div class="nav-item">Contact us</div>
     </nav>
     <header>
-        <h1>Welcome to our memes generator</h1>
+      <h1>Welcome to our memes generator</h1>
     </header>
     <!-- canvas -->
     <!-- <input type="file" name="image" onchange="onFileInputChange(event)" /> -->
     <main>
-        <section class="canvas-section hidden">
-            <div class="memes-playground-container flex space-evenly ">
-                <button onclick="onDispGallerry()">Back to gallery</button>
-                <div class="canvas-wrapper">
-                    <canvas  id="img-canvas"></canvas>
-                </div>
-                <!-- side bar -->
-                <div class="bar-wrapper">
-                    <div class="controller">
-                        <input type="file" name="image" onchange="onFileInputChange(event)" />
-                        <div class="button-inside">
-                            <input oninput="onInputText('0')" class="text-input0" placeholder="Type text">
-                            <button class="erase-btn" onclick="onEraseText(this, '0')">X</button>
-                        </div>
-                        <br>
-                        <input onchange="onTextColor('0',this)" type="color">
-                        <select onchange="onFontSelect('0' , this) , onInputText('0')" class="select-font">
-                            <option value="Ariel">Ariel</option>
-                            <option value="cursive">cursive</option>
-                            <option value="Courier">Courier</option>
-                            <option value="Sans Serif" selected>Sans Serif</option>
-                            <option value="Comic Sans MS">Comic Sans MS</option>
-                            <option value="Times New Roman">Times New Roman</option>
-                            <option value="Courier New">Courier New</option>
-                            <option value="Verdana">Verdana</option>
-                            <option value="Trebuchet MS">Trebuchet MS</option>
-                            <option value="Arial Black">Arial Black</option>
-                            <option value="Impact">Impact</option>
-                            <option value="Bookman">Bookman</option>
-                            <option value="Garamond">Garamond</option>
-                            <option value="Palatino">Palatino</option>
-                            <option value="Georgia">Georgia</option>
-                        </select>
-                        <button class="controller-btn" onclick="onFontSizeChange('0','+')">+</button>
-                        <button class="controller-btn" onclick="onFontSizeChange('0','-')">-</button>
-                        <button class="controller-btn"
-                            onclick="onAlignText('0','left') , onInputText('0')">left</button>
-                        <button class="controller-btn"
-                            onclick="onAlignText('0','center') , onInputText('0')">center</button>
-                        <button class="controller-btn"
-                            onclick="onAlignText('0','right') , onInputText('0')">right</button>
-                    </div>
-                    <div class="controller">
+      <section class="canvas-section hidden">
+        <div class="memes-playground-container flex space-evenly ">
+          <button onclick="onDispGallerry()">Back to gallery</button>
+          <div class="canvas-wrapper">
+            <canvas id="img-canvas"></canvas>
+          </div>
+          <!-- side bar -->
+          <div class="bar-wrapper">
+            <div class="controller">
+              <input
+                type="file"
+                name="image"
+                onchange="onFileInputChange(event)"
+              />
+              <div class="button-inside">
+                <input
+                  oninput="onInputText()"
+                  class="text-input"
+                  placeholder="Type text"
+                />
+                <button class="erase-btn" onclick="onEraseText(this)">X</button>
+              </div>
+              <br />
+              <input onchange="onTextColor(this)" type="color" />
+              <select
+                onchange="onFontSelect(this) , renderText()"
+                class="select-font"
+              >
+                <option value="Ariel">Ariel</option>
+                <option value="cursive">cursive</option>
+                <option value="Courier">Courier</option>
+                <option value="Sans Serif" selected>Sans Serif</option>
+                <option value="Comic Sans MS">Comic Sans MS</option>
+                <option value="Times New Roman">Times New Roman</option>
+                <option value="Courier New">Courier New</option>
+                <option value="Verdana">Verdana</option>
+                <option value="Trebuchet MS">Trebuchet MS</option>
+                <option value="Arial Black">Arial Black</option>
+                <option value="Impact">Impact</option>
+                <option value="Bookman">Bookman</option>
+                <option value="Garamond">Garamond</option>
+                <option value="Palatino">Palatino</option>
+                <option value="Georgia">Georgia</option>
+              </select>
+              <button class="controller-btn" onclick="onFontSizeChange('+')">
+                +
+              </button>
+              <button class="controller-btn" onclick="onFontSizeChange('-')">
+                -
+              </button>
+              <button
+                class="controller-btn"
+                onclick="onAlignText('left') , renderText() "
+              >
+                left
+              </button>
+              <button
+                class="controller-btn"
+                onclick="onAlignText('center') , renderText()"
+              >
+                center
+              </button>
+              <button
+                class="controller-btn"
+                onclick="onAlignText('right')  , renderText() "
+              >
+                right
+              </button>
+            </div>
+
+            <button onclick="onAddLine()">Add line</button>
+            <!-- <div class="controller">
                         <div class="button-inside">
                             <input oninput="onInputText('1')" class="text-input1" placeholder="Type text">
                             <button class="erase-btn" onclick="onEraseText(this, '1')">X</button>
@@ -97,34 +129,41 @@
                             onclick="onAlignText('1','center') , onInputText('1')">center</button>
                         <button class="controller-btn"
                             onclick="onAlignText('1','right') , onInputText('1')">right</button>
-                    </div>
-                    <div class="final-stage">
-                        <button class="controller-btn"><a href="#" onclick="downloadImg(this)" download="my-img.jpg">
-                                Save
-                            </a></button>
-                        <button class="controller-btn">Share</button>
-                    </div>
-                </div>
+                    </div> -->
+            <div class="final-stage">
+              <button class="controller-btn">
+                <a href="#" onclick="downloadImg(this)" download="my-img.jpg">
+                  Save
+                </a>
+              </button>
+              <button class="controller-btn">Share</button>
             </div>
-        </section>
-        <!-- gallery -->
-        <section class="gallery-section">
-            <h1>Choose a pic</h1>
-            <div class="pop-words">
-                <div class="pop-word word1" onclick="searchElectedWord(this)"></div>
-                <div class="pop-word word2" onclick="searchElectedWord(this)"></div>
-                <div class="pop-word word3" onclick="searchElectedWord(this)"></div>
-                <div class="pop-word word4" onclick="searchElectedWord(this)"></div>
-                <div class="pop-word word5" onclick="searchElectedWord(this)"></div>
-            </div>
-            <div class="memes-search">
-                <input type="text" id="myInput" onkeyup="keyWordSearch()" placeholder="Search by keywords.."
-                    title="Type in a name">
-            </div>
-            <div class="grid-wrapper">
-                <div class="grid-container"></div>
-            </div>
-        </section>
+          </div>
+        </div>
+      </section>
+      <!-- gallery -->
+      <section class="gallery-section">
+        <h1>Choose a pic</h1>
+        <div class="pop-words">
+          <div class="pop-word word1" onclick="searchElectedWord(this)"></div>
+          <div class="pop-word word2" onclick="searchElectedWord(this)"></div>
+          <div class="pop-word word3" onclick="searchElectedWord(this)"></div>
+          <div class="pop-word word4" onclick="searchElectedWord(this)"></div>
+          <div class="pop-word word5" onclick="searchElectedWord(this)"></div>
+        </div>
+        <div class="memes-search">
+          <input
+            type="text"
+            id="myInput"
+            onkeyup="keyWordSearch()"
+            placeholder="Search by keywords.."
+            title="Type in a name"
+          />
+        </div>
+        <div class="grid-wrapper">
+          <div class="grid-container"></div>
+        </div>
+      </section>
     </main>
     <!-- <footer class="page-footer"></footer> -->
 
@@ -134,6 +173,5 @@
     <script src="js/gallery.js"></script>
     <script src="js/util.js"></script>
     <script src="js/main.js"></script>
-</body>
-
+  </body>
 </html>

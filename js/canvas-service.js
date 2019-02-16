@@ -1,10 +1,31 @@
 var gInputImgEv
 
-function inputText(i) {
-    var text = document.querySelector(`.text-input${i}`).value;
-    gMeme.txts[i].line = text;
+function inputText() {
+    var text = document.querySelector(`.text-input`).value;
+    // set text for the first line
+     gSelectedTextItem.line = text;
+    // set text to the clicked one
+    // else gSelectedTextItem.line = text
     renderText()
 }
+
+
+// -------------------- new text obj func --------------
+
+function createTxtObj() {
+    return {
+        isDraggable: false,
+        line: '',
+        font: 'Ariel',
+        size: 50,
+        align: '',
+        color: '#fff',
+        posX: gCanvas.width / 2,
+        posY: gCanvas.height / 2,
+    }
+}
+
+
 
 
 //UPLOAD IMG WITH INPUT FILE 
@@ -37,10 +58,10 @@ function handleImageFromInput(ev, onImageReady) {
     }
     reader.readAsDataURL(ev.target.files[0]);
 }
-
-function eraseText(elErase, inputBoxNum) {
+// TODO: pop txtITEM FROM GMEME
+function eraseText(elErase) {
     elErase.previousElementSibling.value = '';
-    inputText(inputBoxNum);
+    inputText();
 }
 
 

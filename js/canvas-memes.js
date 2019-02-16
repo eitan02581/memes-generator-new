@@ -2,7 +2,8 @@
 var gCanvas;
 var gCtx;
 var gMeme
-
+var gSelectedTextItem
+var gTxtItemIdx
 // indicate mouse's place
 var gStartX
 var gStartY
@@ -14,7 +15,9 @@ function initCanvas() {
     gCtx = gCanvas.getContext('2d');
     gCanvas.width = 600;
     gCanvas.height = 300
+    gTxtItemIdx = 0
     initGmeme()
+    gSelectedTextItem = gMeme.txts[0]
     setEvents()
     // TODO: THINK ABOUT A BETTER OPTION TO RENDER THE SECOND LINE HEIGHT
     setTimeout(() => {
@@ -34,7 +37,6 @@ function initGmeme() {
             color: '#fff',
             posX: 50,
             posY: 50,
-            font: 'Arial'
         }, {
             isDraggable: false,
             line: '',
@@ -43,7 +45,6 @@ function initGmeme() {
             align: '',
             color: '#000',
             posX: 50
-
         }]
     }
 }
@@ -61,10 +62,10 @@ function convertImageToCanvas(id) {
 
 
 // -------------------------------bar controller-------------------------
-function onInputText(i) {
+function onInputText() {
     // clearCtx()
     // if (gMeme.selectedImgId) convertImageToCanvas(gMeme.selectedImgId)
-    inputText(+i)
+    inputText()
 }
 
 function clearCtx() {
@@ -89,46 +90,45 @@ function renderText() {
     });
 }
 
-function onTextColor(i, hexColor) {
+function onTextColor(hexColor) {
     var color = hexColor.value;
     gCtx.fillStyle = `${color}`;
-    gMeme.txts[i].color = `${color}`;
-    inputText(+i);
+    gSelectedTextItem.color = `${color}`;
+    renderText();
 }
 
-function onFontSizeChange(i, type) {
-    if (type === '+') gMeme.txts[i].size = gMeme.txts[i].size + 5;
-    else gMeme.txts[i].size = gMeme.txts[i].size - 5;
-    inputText(+i);
+function onFontSizeChange(type) {
+    if (type === '+') gSelectedTextItem.size = gSelectedTextItem.size + 5;
+    else gSelectedTextItem.size = gSelectedTextItem.size - 5;
+    renderText();
 }
 
-function onAlignText(i, direction) {
-    var txtItem = gMeme.txts[i]
-    txtItem.align = direction
+function onAlignText(direction) {
+    gSelectedTextItem.align = direction
     switch (direction) {
         case 'left':
-            txtItem.posX = 0;
+            gSelectedTextItem.posX = 0;
             break;
         case 'center':
-            txtItem.posX = (gCanvas.width / 2) - (gCtx.measureText(txtItem.line).width / 2);
+            gSelectedTextItem.posX = (gCanvas.width / 2) - (gCtx.measureText(gSelectedTextItem.line).width / 2);
             break;
         case 'right':
-            txtItem.posX = gCanvas.width - gCtx.measureText(txtItem.line).width;
+            gSelectedTextItem.posX = gCanvas.width - gCtx.measureText(gSelectedTextItem.line).width;
             break;
     }
 }
 
-function onFontSelect(i, el) {
+function onFontSelect(el) {
     var font = el.value;
-    gMeme.txts[i].font = font
+    gSelectedTextItem.font = font
 }
 
 function onSaveImage(elLink) {
     downloadImg(elLink)
 }
 
-function onEraseText(elText, elInput) {
-    eraseText(elText, elInput);
+function onEraseText(elText) {
+    eraseText(elText);
 }
 
 
@@ -151,6 +151,22 @@ function getMousePosRelative(ev) {
 
 
 
+
+// ----------------------- on line adding ------------------------
+
+function onAddLine() {
+    gTxtItemIdx++
+    if (gTxtItemIdx > 1) gMeme.txts.push(createTxtObj());
+    gSelectedTextItem = gMeme.txts[gTxtItemIdx]
+    fillTextItemLine()
+    // clean the input field on new line
+    document.querySelector('.text-input').value = '';
+    renderText()
+}
+
+function fillTextItemLine() {
+    gSelectedTextItem.line = 'New Line'
+}
 
 
 
@@ -176,12 +192,17 @@ function mouseDownEvent(ev) {
 
 function setSelectedTextDraggable(ev) {
     gMeme.txts.forEach((txtItem) => {
+
         if (ev.offsetX > txtItem.posX &&
             ev.offsetX < (txtItem.posX + gCtx.measureText(txtItem.line).width) &&
             // TODO: needs to be more precise  => (txtItem.posY - txtItem.size)
             ev.offsetY > (txtItem.posY - txtItem.size) &&
-            ev.offsetY < txtItem.posY)
+            ev.offsetY < txtItem.posY) {
+            gSelectedTextItem = txtItem
+            // set line value to the input filed
+            document.querySelector('.text-input').value = gSelectedTextItem.line;
             toggleTextDraggable(txtItem, 'true')
+        }
     })
 
 }

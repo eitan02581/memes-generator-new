@@ -10,12 +10,11 @@ function initGrid() {
 }
 
 function createImage(url, tags) {
-    var image = {
+    return {
         url: url,
         id: idGenerator(),
         tags: tags
     }
-    return image;
 }
 
 function createImages() {
