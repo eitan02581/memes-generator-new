@@ -102,7 +102,7 @@ canvas {
     display: grid;
     grid-template-rows: auto;
     grid-template-columns: repeat(4, 1fr);
-    grid-gap: 20px;
+    grid-gap: 45px;
     width: auto;
     margin: 50px;
 }
@@ -110,6 +110,8 @@ canvas {
 .grid-container img {
     cursor: pointer;
 }
+
+
 
 @media (max-width: 1040px) and (min-width: 768px) {
     .grid-container {
@@ -128,9 +130,16 @@ canvas {
 .image-render-style {
     width: 100%;
     height: 100%;
-    background-position: center center;
-    background-size: cover;
     object-fit: cover;
+    border-radius: 4px;
+    transition: 0.3s;
+}
+.image-render-style:hover {
+    box-shadow: -webkit-box-shadow: 0px 10px 41px 5px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 10px 41px 5px rgba(0,0,0,0.75);
+    box-shadow: 0px 10px 41px 5px rgba(0,0,0,0.75);
+    transform: translateY(-15px);
+    transform: scale(1.1)
 }
 
 .pop-words {

@@ -48,6 +48,7 @@ function createImages() {
 function renderGrid(images) {
     var strHTML = images.map(function (image) {
         return `<div > <img id="${image.id}"  onclick="  onDispCanvas('${image.id}')"  class="image-render-style" src="${image.url}" alt=""> </div>`
+         
     });
     var str = strHTML.join('');
     document.querySelector('.grid-container').innerHTML = str.split('>,<').join('><');
