@@ -23,7 +23,7 @@ ul , li , h1 {
     /* padding: 0; */
 }
 
-.navbar {
+.navbar-area {
     height: 100px;
     width: 100%;
     background-color: black;
@@ -50,7 +50,7 @@ h1 {
     text-align: center;
 }
 
-/* footer area */
+/* about-us area */
 
 .page-footer {
     width: 100%;
@@ -90,4 +90,22 @@ h1 {
 
 .profile-desc {
     text-align: center;
+}
+
+/* contact us area */
+
+.contact-us {
+    position: relative;
+    transition: 0.5s;
+}
+
+.contact {
+    position: absolute;
+    left: -1000px;
+    transition: 0.3s;
+
+}
+
+.contact-show {
+    left: 0;
 }

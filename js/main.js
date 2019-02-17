@@ -4,10 +4,12 @@ function scrollDown() {
         'slow');
 }
 
-function init() {
-    initGrid();
+function toggleContact() {
+    document.querySelector('.contact').classList.toggle('contact-show');
+}
 
-  
+function init() {
+    initGrid();  
 }
 
 function onDispCanvas(imgId) {
@@ -79,7 +81,9 @@ function findMostPop() {
 function searchElectedWord(el) {
     if (document.querySelector('#myInput').value !== el.innerText) {
         document.querySelector('#myInput').value = el.innerText;
+        document.querySelector('#inputUL').classList.add('hidden');
         keyWordSearch();
+        
     }
 }
 
@@ -91,4 +95,17 @@ function onSetLang(lang) {
         document.body.classList.remove('rtl')
     }
     doTrans();
+}
+
+function onSendEmail() {
+    sendEmail()
+}
+
+function sendEmail() {
+    var name = $('#contact-name').val();
+    var email = $('#contact-email').val();
+    var subj = $('#contact-subject').val();
+    var body = $('#contact-body').val();
+
+    window.open(`https://mail.google.com/mail/?view=cm&fs=1&to=${email}&su=${subj}&body=${body}`);
 }
