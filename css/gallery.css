@@ -50,6 +50,9 @@
 }
 
 /* search box */
+#myInput:hover{
+    border-bottom: unset;
+}
 
 #inputUL {
     list-style-type: none;

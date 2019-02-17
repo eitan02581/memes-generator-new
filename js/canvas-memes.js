@@ -341,7 +341,9 @@ function checkIfText() {
 
 
 function preventBehavior(e) {
-    e.preventDefault(); 
+    e.preventDefault();
 };
-
-document.addEventListener("touchmove", preventBehavior, {passive: false});
+var can = document.querySelector('canvas');
+can.addEventListener("touchmove", preventBehavior, {
+    passive: false
+});

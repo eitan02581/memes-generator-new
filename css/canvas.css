@@ -18,7 +18,7 @@ main {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-
+    justify-content: space-between;
 }
 
 /* nav */
@@ -119,6 +119,7 @@ nav a {
     justify-content: center;
     flex-wrap: wrap;
     margin-top: 10px;
+    align-items: center;
 }
 .input-line-wrapper button:hover  , input:hover  ,.input-line-wrapper select:hover {
     border-bottom: 5px solid #00d4bf;
@@ -403,6 +404,8 @@ canvas {
     list-style: none;
     height: 60px;
     padding: 0;
+    margin-bottom: 20px;
+
 }
 
 .align-ul-mobile ul button {
@@ -410,6 +413,7 @@ canvas {
     background-color: #009688;
     width: 70px;
     text-align: center;
+    
 }
 
 @media (max-width: 650px) {
