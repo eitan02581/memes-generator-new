@@ -120,7 +120,7 @@ nav a {
     flex-wrap: wrap;
     margin-top: 10px;
 }
-.input-line-wrapper button:hover  , input:hover  , select:hover {
+.input-line-wrapper button:hover  , input:hover  ,.input-line-wrapper select:hover {
     border-bottom: 5px solid #00d4bf;
 }
 
@@ -435,6 +435,10 @@ canvas {
     }
     .input-line-wrapper{
         height: 150px;
+    }
+    .align-ul-mobile{
+        margin-bottom: 20px;
+
     }
 
 
