@@ -96,6 +96,8 @@ nav a:hover {
 }
 .h1-gal{
     margin: 32px;
+    font-size: 42px;
+    color: white;
 }
 
 .select-nav-gal{
@@ -143,7 +145,30 @@ h1 {
     position: relative;
     bottom: 0;
 }
-
+.about-h1{
+    text-align: center;
+    color: #FFEB3B;
+    margin-top: 20px;
+}
+.port-btn{
+    font-size: 20px;
+    width: 210px;
+    height: 57px;
+    border: none;
+    background: #FFC107;
+    cursor: pointer;
+    margin-bottom: 20px;
+    transition: 0.3s;
+}
+.port-btn:hover{
+    width: 220px;
+    height: 65px;
+}
+.port-btn a {
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+}
 .profile {
     width: 80%;
     height: auto;
@@ -173,7 +198,7 @@ ul.social-buttons li a {
 }
 
 ul.social-buttons li a:hover {
-    background-color: #17a2b8;
+    background-color: #FFC107;
 }
 
 .profile-image {

@@ -10,14 +10,13 @@
   <link rel="stylesheet" href="css/gallery.css" />
   <link rel="stylesheet" href="css/canvas.css" />
   <!-- cdn links -->
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
-    integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"
-    integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
+    crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
+    crossorigin="anonymous">
   <link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
   <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-  <link rel="shortcut icon" type="image/png"
-    href="http://www.flagblvd.com/wp-content/uploads/2015/09/israeli-flag-medium-570x600.png" />
+  <link rel="shortcut icon" type="image/png" href="http://www.flagblvd.com/wp-content/uploads/2015/09/israeli-flag-medium-570x600.png" />
   <title>Memes-Generator</title>
 </head>
 
@@ -78,8 +77,8 @@
                         <i class="fa fa-envelope text-info"></i>
                       </div>
                     </div>
-                    <input type="email" class="form-control" id="contact-email" name="email"
-                      placeholder="example@gmail.com" required />
+                    <input type="email" class="form-control" id="contact-email" name="email" placeholder="example@gmail.com"
+                      required />
                   </div>
                 </div>
                 <div class="form-group">
@@ -104,8 +103,7 @@
                 </div>
 
                 <div class="text-center">
-                  <input onclick="sendEmail()" style="cursor:pointer" type="button" value="SEND"
-                    class="btn btn-info btn-block rounded-0 py-2" />
+                  <input onclick="sendEmail()" style="cursor:pointer" type="button" value="SEND" class="btn btn-info btn-block rounded-0 py-2" />
                 </div>
               </div>
             </div>
@@ -135,7 +133,7 @@
 
       <!-- ABOUT US -->
       <footer class="page-footer" id="about-us">
-        <h1>ABOUT US</h1>
+        <h1  class="about-h1">ABOUT US</h1>
         <div class="members flex justify-center">
           <div class="profile flex justify-center">
             <div class="flex justify-center team-member">
@@ -160,7 +158,7 @@
               </ul>
             </div>
             <div class="profile-desc flex justify-center">
-              <p><a href="https://yonir44.github.io/my-portfolio/">See my portfolio</a></p>
+              <button class="port-btn"> <a href="https://yonir44.github.io/my-portfolio/">See my portfolio</a></button>
             </div>
           </div>
           <div class="profile flex justify-center">
@@ -168,25 +166,25 @@
               <img class="profile-image" src="meme-imgs/eitan.jpg" alt="">
               <h3>Eitan Elnekave</h3>
               <ul class="list-inline social-buttons">
-                  <li class="list-inline-item">
-                    <a href="https://github.com/eitan02581">
-                      <i class="fab fa-git"></i>
-                    </a>
-                  </li>
-                  <li class="list-inline-item">
-                    <a href="https://www.facebook.com/eitan.elnekave">
-                      <i class="fa fa-facebook"></i>
-                    </a>
-                  </li>
-                  <li class="list-inline-item">
-                    <a href="#">
-                      <i class="fa fa-linkedin"></i>
-                    </a>
-                  </li>
-                </ul>
+                <li class="list-inline-item">
+                  <a href="https://github.com/eitan02581">
+                    <i class="fab fa-git"></i>
+                  </a>
+                </li>
+                <li class="list-inline-item">
+                  <a href="https://www.facebook.com/eitan.elnekave">
+                    <i class="fa fa-facebook"></i>
+                  </a>
+                </li>
+                <li class="list-inline-item">
+                  <a href="#">
+                    <i class="fa fa-linkedin"></i>
+                  </a>
+                </li>
+              </ul>
             </div>
             <div class="profile-desc flex justify-center">
-              <p><a href="https://eitan02581.github.io/portofolio/">See my portfolio</a></p>
+              <button class="port-btn"> <a href="https://eitan02581.github.io/portofolio/">See my portfolio</a></button>
             </div>
           </div>
         </div>
@@ -204,8 +202,7 @@
                 <li></li>
                 <li> <button class="nav-btn" onclick="onDispGallerry()" data-trans="return-btn">Back to gallery</button>
                 </li>
-                <li> <button class="nav-btn "> <a href="#" onclick="downloadImg(this)" download="my-img.jpg"
-                      data-trans="save-btn">
+                <li> <button class="nav-btn "> <a href="#" onclick="downloadImg(this)" download="my-img.jpg" data-trans="save-btn">
                       Save </a></button></li>
                 <li>
                   <form action="" method="POST" enctype="multipart/form-data" onsubmit="uploadImg(this, event)">
