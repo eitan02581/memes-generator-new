@@ -10,11 +10,10 @@
   <link rel="stylesheet" href="gallery.css" />
   <link rel="stylesheet" href="canvas.css" />
   <!-- cdn links -->
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
-    integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
+    crossorigin="anonymous">
   <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-  <link rel="shortcut icon" type="image/png"
-    href="http://www.flagblvd.com/wp-content/uploads/2015/09/israeli-flag-medium-570x600.png" />
+  <link rel="shortcut icon" type="image/png" href="http://www.flagblvd.com/wp-content/uploads/2015/09/israeli-flag-medium-570x600.png" />
   <title>Memes-Generator</title>
 </head>
 
@@ -28,7 +27,7 @@
 
       <nav class="navbar-area">
         <div class="nav-item" data-trans="about-us" onclick="scrollDown()">About us</div>
-<div class="nav-item" data-trans="contact-us" onclick="toggleContact()">Contact us</div>
+        <div class="nav-item" data-trans="contact-us" onclick="toggleContact()">Contact us</div>
 
       </nav>
 
@@ -61,8 +60,8 @@
                         <i class="fa fa-envelope text-info"></i>
                       </div>
                     </div>
-                    <input type="email" class="form-control" id="contact-email" name="email"
-                      placeholder="example@gmail.com" required />
+                    <input type="email" class="form-control" id="contact-email" name="email" placeholder="example@gmail.com"
+                      required />
                   </div>
                 </div>
                 <div class="form-group">
@@ -87,8 +86,7 @@
                 </div>
 
                 <div class="text-center">
-                  <input onclick="sendEmail()" style="cursor:pointer" type="button" value="SEND"
-                    class="btn btn-info btn-block rounded-0 py-2" />
+                  <input onclick="sendEmail()" style="cursor:pointer" type="button" value="SEND" class="btn btn-info btn-block rounded-0 py-2" />
                 </div>
               </div>
             </div>
@@ -146,8 +144,6 @@
       </footer>
     </section>
 
-
-
     <section class="canvas-section hidden">
       <div class="editor-container">
 
@@ -155,11 +151,14 @@
           <nav>
             <div class="nav-btn-wrapper">
               <ul class="nav-ul">
+                <li></li>
                 <li> <button class="nav-btn" onclick="onDispGallerry()" data-trans="return-btn">Back to gallery</button>
                 </li>
                 <li> <button class="nav-btn "> <a href="#" onclick="downloadImg(this)" download="my-img.jpg" data-trans="save-btn">
                       Save </a></button></li>
                 <li> <button class="nav-btn " data-trans="share-btn">Share</button> </li>
+                <li></li>
+
               </ul>
             </div>
           </nav>
@@ -169,15 +168,16 @@
           <div class="canvas-wrapper">
             <canvas id="img-canvas"></canvas>
           </div>
+          <div class="input-line-container">
+              <div class="input-line-wrapper">
+                <button class="erase-btn" onclick="onEraseText()">X</button>
+                <input oninput="onInputText()" class="text-input" placeholder="Type text" />
+                <button class="add-line-btn" onclick="onAddLine()" data-trans="add-line">Add line</button>
+                <select onchange="onFontSelect(this) , renderText()" class="select-font"></select>
+              </div>
+            </div>
         </div>
-        <div class="input-line-container">
-          <div class="input-line-wrapper">
-            <button class="erase-btn" onclick="onEraseText()">X</button>
-            <input oninput="onInputText()" class="text-input" placeholder="Type text" />
-            <button class="add-line-btn" onclick="onAddLine()" data-trans="add-line">Add line</button>
-            <select onchange="onFontSelect(this) , renderText()" class="select-font"></select>
-          </div>
-        </div>
+        
         <footer>
           <div class="footer-wrapper">
             <div class="footer-btn-wrapper">
