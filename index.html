@@ -5,7 +5,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="general.css" />
+  <link rel="stylesheet" href="gallery.css" />
+  <link rel="stylesheet" href="canvas.css" />
+  <!-- cdn links -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
+    crossorigin="anonymous">
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
   <link rel="shortcut icon" type="image/png" href="http://www.flagblvd.com/wp-content/uploads/2015/09/israeli-flag-medium-570x600.png" />
 
   <title>Memes-Generator</title>
@@ -15,111 +21,95 @@
   <nav class="navbar">
     <div class="nav-item">About us</div>
     <div class="nav-item">Contact us</div>
+    <div class="final-stage">
+        <button class="blue-btn nav-item">
+          <a href="#" onclick="downloadImg(this)" download="my-img.jpg">
+            Save
+          </a>
+        </button>
+        <button class="blue-btn nav-item">Share</button>
+        <input class="nav-item" type="file" name="image" onchange="onFileInputChange(event)" />
+
+      </div>
   </nav>
-  <header>
-    <h1>Welcome to our memes generator</h1>
-  </header>
+
   <!-- canvas -->
   <!-- <input type="file" name="image" onchange="onFileInputChange(event)" /> -->
   <main>
     <section class="canvas-section hidden">
-      <div class="memes-playground-container flex space-evenly ">
+      <div class="memes-playground-container ">
         <button onclick="onDispGallerry()">Back to gallery</button>
+        <div class="control-bar">
+          <input onchange="onTextColor(this)" type="color" />
+          <select onchange="onFontSelect(this) , renderText()" class="select-font font-select-blue">
+          </select>
+          <!-- <button class="control-bar-btn plus-minus" onclick="onFontSizeChange('+')">
+            +
+          </button>
+          <button class="control-bar-btn plus-minus" onclick="onFontSizeChange('-')">
+            -
+          </button>
+          <button class="control-bar-btn align-btn" onclick="onAlignText('left') , renderText() ">
+            <i class="fas fa-align-left"></i>
+          </button>
+          <button class="control-bar-btn align-btn" onclick="onAlignText('center') , renderText()">
+            <i class="fas fa-align-justify"></i>
+          </button>
+          <button class="control-bar-btn align-btn" onclick="onAlignText('right')  , renderText() ">
+            <i class="fas fa-align-right"></i>
+          </button> -->
+        </div>
+        <div class="input-line">
+          <input oninput="onInputText()" class="text-input" placeholder="Type text" />
+          <button class="erase-btn" onclick="onEraseText(this)">X</button>
+
+          <button class="blue-btn" onclick="onAddLine()">Add line</button>
+        </div>
         <div class="canvas-wrapper">
           <canvas id="img-canvas"></canvas>
         </div>
         <!-- side bar -->
-        <div class="bar-wrapper">
-          <div class="controller">
-            <input type="file" name="image" onchange="onFileInputChange(event)" />
-            <div class="button-inside">
-              <input oninput="onInputText()" class="text-input" placeholder="Type text" />
-              <button class="erase-btn" onclick="onEraseText(this)">X</button>
-            </div>
-            <br />
-            <input onchange="onTextColor(this)" type="color" />
-            <select onchange="onFontSelect(this) , renderText()" class="select-font">
-              <option value="Ariel">Ariel</option>
-              <option value="cursive">cursive</option>
-              <option value="Courier">Courier</option>
-              <option value="Sans Serif" selected>Sans Serif</option>
-              <option value="Comic Sans MS">Comic Sans MS</option>
-              <option value="Times New Roman">Times New Roman</option>
-              <option value="Courier New">Courier New</option>
-              <option value="Verdana">Verdana</option>
-              <option value="Trebuchet MS">Trebuchet MS</option>
-              <option value="Arial Black">Arial Black</option>
-              <option value="Impact">Impact</option>
-              <option value="Bookman">Bookman</option>
-              <option value="Garamond">Garamond</option>
-              <option value="Palatino">Palatino</option>
-              <option value="Georgia">Georgia</option>
-            </select>
-            <button class="controller-btn" onclick="onFontSizeChange('+')">
-              +
-            </button>
-            <button class="controller-btn" onclick="onFontSizeChange('-')">
-              -
-            </button>
-            <button class="controller-btn" onclick="onAlignText('left') , renderText() ">
-              left
-            </button>
-            <button class="controller-btn" onclick="onAlignText('center') , renderText()">
-              center
-            </button>
-            <button class="controller-btn" onclick="onAlignText('right')  , renderText() ">
-              right
-            </button>
-          </div>
+       
 
-          <button onclick="onAddLine()">Add line</button>
-          <!-- <div class="controller">
-                        <div class="button-inside">
-                            <input oninput="onInputText('1')" class="text-input1" placeholder="Type text">
-                            <button class="erase-btn" onclick="onEraseText(this, '1')">X</button>
-                        </div>
-                        <br>
-                        </button>
-                        <input onchange="onTextColor('1',this)" type="color">
-                        <select onchange="onFontSelect('1' , this) , onInputText('1')" class="select-font">
-                            <option value="Ariel">Ariel</option>
-                            <option value="cursive">cursive</option>
-                            <option value="Courier">Courier</option>
-                            <option value="Sans Serif" selected>Sans Serif</option>
-                            <option value="Comic Sans MS">Comic Sans MS</option>
-                            <option value="Times New Roman">Times New Roman</option>
-                            <option value="Courier New">Courier New</option>
-                            <option value="Verdana">Verdana</option>
-                            <option value="Trebuchet MS">Trebuchet MS</option>
-                            <option value="Arial Black">Arial Black</option>
-                            <option value="Impact">Impact</option>
-                            <option value="Bookman">Bookman</option>
-                            <option value="Garamond">Garamond</option>
-                            <option value="Palatino">Palatino</option>
-                            <option value="Georgia">Georgia</option>
-                        </select>
-                        <button class="controller-btn" onclick="onFontSizeChange('1','+')">+</button>
-                        <button class="controller-btn" onclick="onFontSizeChange('1','-')">-</button>
-                        <button class="controller-btn"
-                            onclick="onAlignText('1','left')  , onInputText('1')">left</button>
-                        <button class="controller-btn"
-                            onclick="onAlignText('1','center') , onInputText('1')">center</button>
-                        <button class="controller-btn"
-                            onclick="onAlignText('1','right') , onInputText('1')">right</button>
-                    </div> -->
-          <div class="final-stage">
-            <button class="controller-btn">
-              <a href="#" onclick="downloadImg(this)" download="my-img.jpg">
-                Save
-              </a>
-            </button>
-            <button class="controller-btn">Share</button>
-          </div>
+
+         
         </div>
       </div>
+      <footer>
+        <div class="footer-wrapper">
+          <div class="footer-btn-wrapper">
+            <ul class="ul-footer">
+              <li> <input onchange="onTextColor(this)" type="color" />              </li>
+              <li> <button class="control-bar-btn plus-minus" onclick="onFontSizeChange('+')">
+                  +
+                </button></li>
+              <li><button class="control-bar-btn plus-minus" onclick="onFontSizeChange('-')">
+                  -
+                </button></li>
+              <li> <button class="control-bar-btn align-btn" onclick="onAlignText('left') , renderText() ">
+                  <i class="fas fa-align-left"></i>
+                </button></li>
+              <li> <button class="control-bar-btn align-btn" onclick="onAlignText('center') , renderText()">
+                  <i class="fas fa-align-justify"></i>
+                </button></li>
+              <li> <button class="control-bar-btn align-btn" onclick="onAlignText('right')  , renderText() ">
+                  <i class="fas fa-align-right"></i>
+                </button></li>
+              
+            </ul>
+            
+          </div>
+        </div>
+      </footer>
     </section>
+
+
+
+
     <!-- gallery -->
     <section class="gallery-section">
+      <h1>Welcome to our memes generator</h1>
+
       <h1>Choose a pic</h1>
       <div class="pop-words">
         <div class="pop-word word1" onclick="searchElectedWord(this)"></div>
@@ -129,7 +119,8 @@
         <div class="pop-word word5" onclick="searchElectedWord(this)"></div>
       </div>
       <div class="memes-search">
-        <input type="text" id="myInput" onkeyup="keyWordSearch()" placeholder="Search by keywords.." title="Type in a name" />
+        <input type="text" id="myInput" onkeyup="keyWordSearch() , showList()" placeholder="Search by keywords.." title="Type in a name" />
+        <ul id="inputUL" class="hidden"></ul>
       </div>
       <div class="grid-wrapper">
         <div class="grid-container"></div>
@@ -138,9 +129,15 @@
   </main>
   <!-- <footer class="page-footer"></footer> -->
 
+
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
   <script src="lib/jquery/jquery.min.js"></script>
   <script src="js/canvas-service.js"></script>
   <script src="js/canvas-memes.js"></script>
+  <script src="js/gallery-service.js"></script>
   <script src="js/gallery.js"></script>
   <script src="js/util.js"></script>
   <script src="js/main.js"></script>

@@ -1,0 +1,284 @@
+.main-header {
+    background-color: black;
+    height: 130px;
+}
+
+.wrapepr {
+    min-width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.logo {
+    font-family: euro55;
+    width: 700px;
+    /* padding: 50px 325px 45px 280px; */
+    background-color: #292929;
+    color: white;
+    font-size: 40px;
+    font-weight: 400;
+    letter-spacing: -0.8px;
+}
+
+.logo span {
+    color: #58c93a;
+}
+
+
+
+
+main {
+    text-align: center;
+
+}
+
+/* layout */
+.memes-playground-container {
+    height: 50%;
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+    .memes-playground-container {
+        flex-direction: column;
+    }
+}
+
+/* canvas */
+
+.control-bar {
+    display: inline-block;
+}
+
+.input-line {
+    display: inline-block;
+}
+
+
+canvas {
+    border: 1px solid black;
+}
+
+.bar-wrapper {
+    height: 400px;
+    width: 200px;
+    background-color: #8bc34a;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.text-input {
+    border: 0;
+    width: 150px;
+    height: 50px;
+    text-align: center;
+    cursor: pointer;
+    border-bottom: solid 5px #009688;
+
+    transition: 0.3s;
+}
+
+.text-input:hover {
+    width: 240px;
+    border-color: #00d4bf;
+
+}
+
+.final-stage {
+    bottom: 0;
+}
+
+/* meme text */
+.meme-text {
+    height: 30px;
+    background-color: #812222;
+    width: 30px;
+    display: inline-block
+}
+
+
+
+.image-render-style {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 4px;
+    transition: 0.3s;
+}
+
+.image-render-style:hover {
+
+    box-shadow: 0px 10px 41px 5px rgba(0, 0, 0, 0.75);
+    /* transform: scale(1.08); */
+    transform: translateY(-15px) scale(1.04);
+    /* transform: rotate(1deg); */
+}
+
+
+/* footer */
+.footer-wrapper {
+    position: absolute;
+    bottom: 0;
+    background-color: #00d4bf ;
+    height: 130px;
+    width: 100%;
+}
+
+.footer-btn-wrapper {
+    position: absolute;
+    bottom: 0;
+    height: 120px;
+    width: 100%;
+    background: #009688;
+}
+
+.ul-footer {
+    display: flex;
+    height: 120px;
+    margin: 0;
+    position: absolute;
+    /* justify-content: space-evenly; */
+    flex-wrap: wrap;
+    list-style: none;
+    width: 100%;
+}
+
+.ul-footer li {
+    width: 15%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-left: 2px solid #00d4bf;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.ul-footer li:hover {
+    box-shadow: 1px -10px 0px 0px #ffffff;
+}
+
+.ul-footer li:last-child {
+    border-right: 2px solid #00d4bf;
+
+
+}
+.ul-footer li:last-child:hover{
+    box-shadow: 0px -10px 0px 0px #ffffff;
+}
+
+
+/* helpers */
+
+.flex {
+    display: flex;
+}
+
+.justify-center {
+    justify-content: center
+}
+
+.space-evenly {
+    justify-content: space-evenly
+}
+
+.hidden {
+    display: none
+}
+
+/* buttons  */
+
+.control-bar-btn {
+    border: none;
+    /* border-bottom: 5px solid #009688; */
+    background: none;
+    transition: 0.3s;
+    cursor: pointer;
+    margin-left: 5px;
+    width: 100%;
+    height: 100%;
+    color: white
+
+}
+
+.plus-minus {
+    /* width: 50px; */
+    font-size: 30px;
+}
+
+.plus-minus:hover {
+    /* border-color: #00d4bf; */
+    /* width: 60px; */
+}
+
+.align-btn {
+    /* width: 50px; */
+    font-size: 20px;
+    /* height: 34px; */
+}
+
+.align-btn:hover {
+    /* border-color: #00d4bf; */
+    /* width: 60px; */
+}
+
+.blue-btn {
+    border: none;
+    background: none;
+    height: 50px;
+    color: white;
+    background-color: #009688;
+    font-size: 20px;
+    padding: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.blue-btn:hover {
+    border-radius: 8px;
+    background-color: #00d4bf;
+    color: white;
+}
+
+.font-select-blue {
+    border: none;
+    font-size: 20px;
+    border-bottom: 5px solid #009688;
+    height: 34px;
+    transition: 0.3s;
+}
+
+.font-select-blue:hover {
+    border-bottom: 5px solid #00d4bf;
+
+}
+
+.button-inside {
+    position: relative;
+}
+
+.erase-btn {
+    border: none;
+    height: 54px;
+    width: 28px;
+    margin-left: -4px;
+    color: white;
+    text-align: center;
+    font-weight: bold;
+    background-color: #009688;
+    transition: 0.3s;
+}
+
+.erase-btn:hover {
+    cursor: pointer;
+    background-color: #00d4bf;
+
+}
+
+.button-inside input {
+    height: 25px;
+    width: 90%;
+    padding-left: 10px;
+    border-radius: 4px;
+    border: none;
+    outline: none;
+}

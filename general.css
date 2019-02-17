@@ -1,0 +1,48 @@
+* {
+    box-sizing: border-box;
+    outline: none;
+}
+
+html {
+    width: 100vw;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+}
+
+a{
+    text-decoration: none
+}
+
+.navbar {
+    height: 100px;
+    width: 100%;
+    background-color: black;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.nav-item {
+    height: 100%;
+    width: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-item:hover {
+    cursor: pointer;
+    border-bottom: 5px solid red;
+}
+
+h1 {
+    text-align: center;
+}
+
+
+

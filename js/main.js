@@ -1,5 +1,7 @@
 function init() {
     initGrid();
+
+  
 }
 
 function onDispCanvas(imgId) {
@@ -24,6 +26,17 @@ function keyWordSearch() {
                 searchedImages.push(gImages[i]);
                 break;
             }
+        }
+    }
+    var ul = document.getElementById("inputUL");
+    var li = ul.getElementsByTagName("li");
+    for (let i = 0; i < li.length; i++) {
+        var a = li[i].getElementsByTagName("a")[0];
+        var txtValue = a.textContent || a.innerText;
+        if (txtValue.toUpperCase().indexOf(str) > -1) {
+            li[i].style.display = "";
+        } else {
+            li[i].style.display = "none";
         }
     }
     renderGrid(searchedImages);
@@ -58,6 +71,8 @@ function findMostPop() {
 }
 
 function searchElectedWord(el) {
-    document.querySelector('#myInput').value = el.innerText;
-    keyWordSearch();
+    if (document.querySelector('#myInput').value !== el.innerText) {
+        document.querySelector('#myInput').value = el.innerText;
+        keyWordSearch();
+    }
 }

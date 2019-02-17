@@ -1,0 +1,119 @@
+
+
+/* grid layout */
+.gallery-section {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.grid-wrapper {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 45px;
+    width: auto;
+    margin: 50px;
+}
+
+.grid-container img {
+    cursor: pointer;
+}
+
+
+
+@media (max-width: 1040px) and (min-width: 768px) {
+    .grid-container {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: auto
+    }
+}
+
+@media (max-width: 768px) {
+    .grid-container {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: auto;
+    }
+}
+
+/* search box */
+
+#inputUL {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    position: absolute;
+    top: 22px;
+}
+
+#inputUL li a {
+    border: 1px solid #ddd;
+    margin-top: -1px; /* Prevent double borders */
+    background-color: #f6f6f6;
+    padding: 12px;
+    text-decoration: none;
+    font-size: 18px;
+    color: black;
+    display: block
+}
+
+#inputUL li a:hover {
+    background-color: #eee;
+}
+
+
+.memes-search {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+}
+
+
+/* key words */
+
+
+.pop-words {
+    height: 120px;
+    width: 600px;
+    background-color: orange;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 10px;
+}
+
+@media (max-width: 768px) {
+    .pop-words {
+        width: 90%;
+    }
+}
+
+.pop-word {
+    height: 100%;
+    width: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pop-word:hover {
+    cursor: pointer;
+    background-color: salmon;
+}
+
+.page-footer {
+    width: 100%;
+    height: 100px;
+    background-color: rgb(185, 184, 184);
+    position: relative;
+    bottom: 0;
+}

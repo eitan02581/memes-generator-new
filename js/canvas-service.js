@@ -1,4 +1,6 @@
 var gInputImgEv
+var gFonts = ['Ariel', 'cursive', 'Courier', 'Sans Serif', 'Comic Sans MS', 'Times New Roman', 'Courier New', 'Verdana', 'Trebuchet MS',
+             'Arial Black', 'Impact', 'Bookman', 'Garamond', 'Palatino','Georgia'];
 
 function inputText() {
     var text = document.querySelector(`.text-input`).value;
@@ -65,6 +67,6 @@ function eraseText(elErase) {
 
 function downloadImg(elLink) {
     var imgContent = gCanvas.toDataURL('image/jpg');
-    elLink.href = imgContent
+    elLink.href = imgContent;
 }
 // TODO: add the file to img arr

@@ -10,15 +10,17 @@ var gStartY
 
 
 
+
 function initCanvas() {
     gCanvas = document.querySelector('#img-canvas');
     gCtx = gCanvas.getContext('2d');
     gCanvas.width = 600;
-    gCanvas.height = 300
-    gTxtItemIdx = 0
-    initGmeme()
-    gSelectedTextItem = gMeme.txts[0]
-    setEvents()
+    gCanvas.height = 300;
+    gTxtItemIdx = 0;
+    initGmeme();
+    gSelectedTextItem = gMeme.txts[0];
+    setEvents();
+    renderSelect();
     // TODO: THINK ABOUT A BETTER OPTION TO RENDER THE SECOND LINE HEIGHT
     setTimeout(() => {
         onAlignText('center')
@@ -92,6 +94,14 @@ function renderText() {
         gCtx.strokeText(txtItem.line, txtItem.posX, txtItem.posY);
         // onAlignText(i, txtItem.align)
     });
+}
+
+function renderSelect() {
+    var strHTML = '';
+    for (let i = 0; i < gFonts.length; i++) {
+        strHTML += `<option value="${gFonts[i]}">${gFonts[i]}</option>`
+    }
+    document.querySelector('.select-font').innerHTML = strHTML;
 }
 
 function onTextColor(hexColor) {
