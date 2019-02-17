@@ -10,18 +10,21 @@
   <link rel="stylesheet" href="css/gallery.css" />
   <link rel="stylesheet" href="css/canvas.css" />
   <!-- cdn links -->
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
-    crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+    integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"
+    integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+  <link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
   <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-  <link rel="shortcut icon" type="image/png" href="http://www.flagblvd.com/wp-content/uploads/2015/09/israeli-flag-medium-570x600.png" />
+  <link rel="shortcut icon" type="image/png"
+    href="http://www.flagblvd.com/wp-content/uploads/2015/09/israeli-flag-medium-570x600.png" />
   <title>Memes-Generator</title>
 </head>
 
 <body onload="init()">
 
-
   <!-- canvas -->
-  <!-- <input type="file" name="image" onchange="onFileInputChange(event)" /> -->
+
   <main>
     <section class="gallery-section">
 
@@ -65,8 +68,8 @@
                         <i class="fa fa-envelope text-info"></i>
                       </div>
                     </div>
-                    <input type="email" class="form-control" id="contact-email" name="email" placeholder="example@gmail.com"
-                      required />
+                    <input type="email" class="form-control" id="contact-email" name="email"
+                      placeholder="example@gmail.com" required />
                   </div>
                 </div>
                 <div class="form-group">
@@ -91,7 +94,8 @@
                 </div>
 
                 <div class="text-center">
-                  <input onclick="sendEmail()" style="cursor:pointer" type="button" value="SEND" class="btn btn-info btn-block rounded-0 py-2" />
+                  <input onclick="sendEmail()" style="cursor:pointer" type="button" value="SEND"
+                    class="btn btn-info btn-block rounded-0 py-2" />
                 </div>
               </div>
             </div>
@@ -114,7 +118,7 @@
           data-trans="search-placeholder" title="Type in a name" />
         <ul id="inputUL" class="hidden"></ul>
       </div>
-      
+
       <div class="grid-wrapper">
         <div class="grid-container"></div>
       </div>
@@ -127,18 +131,52 @@
             <div class="flex justify-center team-member">
               <img class="profile-image" src="meme-imgs/Yoni.jpg" alt="">
               <h3>Yehonatan Ratzon</h3>
+              <ul class="list-inline social-buttons">
+                <li class="list-inline-item">
+                  <a href="https://github.com/YoniR44">
+                    <i class="fab fa-git"></i>
+                  </a>
+                </li>
+                <li class="list-inline-item">
+                  <a href="https://www.facebook.com/jonathan.ratzon.7">
+                    <i class="fa fa-facebook"></i>
+                  </a>
+                </li>
+                <li class="list-inline-item">
+                  <a href="#">
+                    <i class="fa fa-linkedin"></i>
+                  </a>
+                </li>
+              </ul>
             </div>
             <div class="profile-desc flex justify-center">
-              <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
+              <p><a href="https://yonir44.github.io/my-portfolio/">See my portfolio</a></p>
             </div>
           </div>
           <div class="profile flex justify-center">
             <div class="flex justify-center team-member">
-                <img class="profile-image" src="meme-imgs/eitan.jpg" alt="">
-                <h3>Eitan Elnekave</h3>
+              <img class="profile-image" src="meme-imgs/eitan.jpg" alt="">
+              <h3>Eitan Elnekave</h3>
+              <ul class="list-inline social-buttons">
+                  <li class="list-inline-item">
+                    <a href="https://github.com/eitan02581">
+                      <i class="fab fa-git"></i>
+                    </a>
+                  </li>
+                  <li class="list-inline-item">
+                    <a href="https://www.facebook.com/eitan.elnekave">
+                      <i class="fa fa-facebook"></i>
+                    </a>
+                  </li>
+                  <li class="list-inline-item">
+                    <a href="#">
+                      <i class="fa fa-linkedin"></i>
+                    </a>
+                  </li>
+                </ul>
             </div>
             <div class="profile-desc flex justify-center">
-              <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
+              <p><a href="https://eitan02581.github.io/portofolio/">See my portfolio</a></p>
             </div>
           </div>
         </div>
@@ -156,7 +194,8 @@
                 <li></li>
                 <li> <button class="nav-btn" onclick="onDispGallerry()" data-trans="return-btn">Back to gallery</button>
                 </li>
-                <li> <button class="nav-btn "> <a href="#" onclick="downloadImg(this)" download="my-img.jpg" data-trans="save-btn">
+                <li> <button class="nav-btn "> <a href="#" onclick="downloadImg(this)" download="my-img.jpg"
+                      data-trans="save-btn">
                       Save </a></button></li>
                 <li> <button class="nav-btn " data-trans="share-btn">Share</button> </li>
                 <li></li>
