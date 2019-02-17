@@ -156,8 +156,7 @@
                 <li></li>
                 <li> <button class="nav-btn" onclick="onDispGallerry()" data-trans="return-btn">Back to gallery</button>
                 </li>
-                <li> <button class="nav-btn "> <a href="#" onclick="downloadImg(this)" download="my-img.jpg"
-                      data-trans="save-btn">
+                <li> <button class="nav-btn "> <a href="#" onclick="downloadImg(this)" download="my-img.jpg" data-trans="save-btn">
                       Save </a></button></li>
                 <li> <button class="nav-btn " data-trans="share-btn">Share</button> </li>
                 <li></li>
@@ -167,20 +166,33 @@
           </nav>
         </div>
         <div class="center">
+          <div class="align-ul-mobile">
+            <ul>
+              <li> <button class="control-bar-btn align-btn" onclick="onAlignText('left') , renderText() ">
+                  <i class="fas fa-align-left"></i>
+                </button></li>
+              <li> <button class="control-bar-btn align-btn" onclick="onAlignText('center') , renderText()">
+                  <i class="fas fa-align-justify"></i>
+                </button></li>
+              <li> <button class="control-bar-btn align-btn" onclick="onAlignText('right')  , renderText() ">
+                  <i class="fas fa-align-right"></i>
+                </button></li>
+            </ul>
+          </div>
 
           <div class="canvas-wrapper">
             <canvas id="img-canvas"></canvas>
           </div>
           <div class="input-line-container">
-              <div class="input-line-wrapper">
-                <button class="erase-btn" onclick="onEraseText()">X</button>
-                <input oninput="onInputText()" class="text-input" placeholder="Type text" />
-                <button class="add-line-btn" onclick="onAddLine()" data-trans="add-line">Add line</button>
-                <select onchange="onFontSelect(this) , renderText()" class="select-font"></select>
-              </div>
+            <div class="input-line-wrapper">
+              <button class="erase-btn" onclick="onEraseText()">X</button>
+              <input oninput="onInputText()" class="text-input" placeholder="Type text" />
+              <button class="add-line-btn" onclick="onAddLine()" data-trans="add-line">Add line</button>
+              <select onchange="onFontSelect(this) , renderText()" class="select-font"></select>
             </div>
+          </div>
         </div>
-        
+
         <footer>
           <div class="footer-wrapper">
             <div class="footer-btn-wrapper">
