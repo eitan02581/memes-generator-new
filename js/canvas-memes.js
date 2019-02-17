@@ -60,9 +60,50 @@ function convertImageToCanvas(id) {
     clearCtx();
     gMeme.selectedImgId = id;
     var image = document.getElementById(`${id}`);
-    gCanvas.width = image.naturalWidth;
-    gCanvas.height = image.naturalHeight;
-    gCtx.drawImage(image, 0, 0);
+    // image resize 
+    if (window.innerWidth > 940 && (image.naturalWidth >= 700 || image.naturalHeight >= 700)) {
+        gCanvas.width = image.naturalWidth * 0.8;
+        gCanvas.height = image.naturalHeight * 0.8;
+    } else if (window.innerWidth >= 540 && window.innerWidth <= 940) {
+        if (image.naturalWidth >= 700 || image.naturalHeight >= 700) {
+            gCanvas.width = image.naturalWidth * 0.7;
+            gCanvas.height = image.naturalHeight * 0.7;
+        } else if (image.naturalWidth >= 600 || image.naturalHeight >= 600) {
+            gCanvas.width = image.naturalWidth * 0.8;
+            gCanvas.height = image.naturalHeight * 0.8;
+        } else if (image.naturalWidth >= 500 || image.naturalHeight >= 500) {
+            gCanvas.width = image.naturalWidth * 0.5;
+            gCanvas.height = image.naturalHeight * 0.5;
+        } else if (image.naturalWidth >= 400 || image.naturalHeight >= 400) {
+            gCanvas.width = image.naturalWidth * 0.55;
+            gCanvas.height = image.naturalHeight * 0.55;
+        } else {
+            gCanvas.width = image.naturalWidth;
+            gCanvas.height = image.naturalHeight;
+        }
+    } else if (window.innerWidth < 540) {
+        if (image.naturalWidth >= 700 || image.naturalHeight >= 700) {
+            gCanvas.width = image.naturalWidth * 0.35;
+            gCanvas.height = image.naturalHeight * 0.35;
+        } else if (image.naturalWidth >= 600 || image.naturalHeight >= 600) {
+            gCanvas.width = image.naturalWidth * 0.35;
+            gCanvas.height = image.naturalHeight * 0.35;
+        } else if (image.naturalWidth >= 500 || image.naturalHeight >= 500) {
+            gCanvas.width = image.naturalWidth * 0.5;
+            gCanvas.height = image.naturalHeight * 0.5;
+        } else if (image.naturalWidth >= 400 || image.naturalHeight >= 400) {
+            gCanvas.width = image.naturalWidth * 0.55;
+            gCanvas.height = image.naturalHeight * 0.55;
+        } else {
+            gCanvas.width = image.naturalWidth;
+            gCanvas.height = image.naturalHeight;
+        }
+    } else {
+        gCanvas.width = image.naturalWidth;
+        gCanvas.height = image.naturalHeight;
+    }
+
+    gCtx.drawImage(image, 0, 0, gCanvas.width, gCanvas.height);
 }
 
 
@@ -80,7 +121,7 @@ function renderText() {
     clearCtx()
     if (gMeme.selectedImgId) convertImageToCanvas(gMeme.selectedImgId)
     // TODO: fix the rendering text problem on input file image
-    else handleImageFromInput(gInputImgEv)
+    else gCtx.drawImage(gUploadedImg, 0, 0);
     // render all existing texts 
     var textItem = gMeme.txts
     textItem.forEach((txtItem, i) => {

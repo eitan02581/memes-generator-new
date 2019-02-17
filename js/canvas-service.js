@@ -2,6 +2,8 @@ var gInputImgEv
 var gFonts = ['Ariel', 'cursive', 'Courier', 'Sans Serif', 'Comic Sans MS', 'Times New Roman', 'Courier New', 'Verdana', 'Trebuchet MS',
              'Arial Black', 'Impact', 'Bookman', 'Garamond', 'Palatino','Georgia'];
 
+var gUploadedImg
+
 function inputText() {
     var text = document.querySelector(`.text-input`).value;
     // set text for the first line
@@ -48,15 +50,17 @@ function handleImageFromInput(ev, onImageReady) {
     var reader = new FileReader();
 
     reader.onload = function (ev) {
-        var img = new Image();
-        img.onload = function () {
-            gCanvas.width = img.width;
-            gCanvas.height = img.height;
-            gCtx.drawImage(img, 0, 0);
+        gUploadedImg = new Image();
+        gUploadedImg.onload = function () {
+            gCanvas.width = gUploadedImg.width;
+            gCanvas.height = gUploadedImg.height;
+            gCtx.drawImage(gUploadedImg, 0, 0);
         }
-        img.src = event.target.result;
+        gUploadedImg.src = event.target.result;
     }
     reader.readAsDataURL(ev.target.files[0]);
+    
+    
 }
 // TODO: pop txtITEM FROM GMEME
 function eraseText(elErase) {
