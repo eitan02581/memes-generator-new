@@ -260,6 +260,10 @@ canvas {
 
 /* buttons  */
 
+.btn {
+    cursor: pointer;
+}
+
 .control-bar-btn {
     border: none;
     background: none;

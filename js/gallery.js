@@ -1,6 +1,8 @@
 var gImages = [];
 var gKeyWords = [];
 var gMostPop = [];
+var gFirstAppear = true;
+var gPopChanged = false;
 
 function initGrid() {
     createImages();

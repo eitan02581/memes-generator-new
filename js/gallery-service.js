@@ -42,7 +42,7 @@ function createKeyWord(word) {
         word: word,
         popularity: 1,
         fontSize: 12
-    } 
+    }
     return keyWord;
 }
 
@@ -80,4 +80,14 @@ function createKeyWords() {
     gKeyWords.push(createKeyWord('putin'));
     gKeyWords.push(createKeyWord('speech'));
     gKeyWords.push(createKeyWord('toystory'));
+
+    gKeyWords[5].popularity = 5;
+    gKeyWords[2].popularity = 3;
+    gKeyWords[10].popularity = 2;
+    gKeyWords[13].popularity = 4;
+
+    gKeyWords[5].fontSize = 28;
+    gKeyWords[2].fontSize = 20;
+    gKeyWords[10].fontSize = 16;
+    gKeyWords[13].fontSize = 24;
 }
