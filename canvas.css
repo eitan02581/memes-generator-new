@@ -1,35 +1,10 @@
-.main-header {
-    background-color: black;
-    height: 130px;
-}
 
-.wrapepr {
-    min-width: 100%;
-    margin: 0;
-    padding: 0;
-}
-
-.logo {
-    font-family: euro55;
-    width: 700px;
-    /* padding: 50px 325px 45px 280px; */
-    background-color: #292929;
-    color: white;
-    font-size: 40px;
-    font-weight: 400;
-    letter-spacing: -0.8px;
-}
-
-.logo span {
-    color: #58c93a;
-}
 
 
 
 
 main {
     text-align: center;
-
 }
 
 /* layout */
@@ -189,7 +164,6 @@ canvas {
 
 .control-bar-btn {
     border: none;
-    /* border-bottom: 5px solid #009688; */
     background: none;
     transition: 0.3s;
     cursor: pointer;

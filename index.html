@@ -13,26 +13,11 @@
     crossorigin="anonymous">
   <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
   <link rel="shortcut icon" type="image/png" href="http://www.flagblvd.com/wp-content/uploads/2015/09/israeli-flag-medium-570x600.png" />
-
   <title>Memes-Generator</title>
 </head>
 
 <body onload="init()">
-  <nav class="navbar">
-    <div class="nav-item" data-trans="about-us">About us</div>
-        <div class="nav-item" data-trans="contact-us">Contact us</div>
-    <div class="final-stage">
-        <button class="blue-btn nav-item">
-          <a href="#" onclick="downloadImg(this)" download="my-img.jpg" data-trans="save-btn">
-            Save
-          </a>
-        </button>
 
-        <button class="blue-btn nav-item" data-trans="share-btn" >Share</button>
-        <input class="nav-item" type="file" name="image" onchange="onFileInputChange(event)" />
-
-      </div>
-  </nav>
 
   <!-- canvas -->
   <!-- <input type="file" name="image" onchange="onFileInputChange(event)" /> -->
@@ -42,27 +27,7 @@
         <button onclick="onDispGallerry()" data-trans="return-btn">Back to gallery</button>
         <div class="control-bar">
           <input onchange="onTextColor(this)" type="color" />
-          <select onchange="onSetLang(this.value)">
-            <option value="en">English</option>
-            <option value="he">עברית</option>
-        </select>
-          <!-- <select onchange="onFontSelect(this) , renderText()" class="select-font font-select-blue"> -->
-          <!-- </select> -->
-          <!-- <button class="control-bar-btn plus-minus" onclick="onFontSizeChange('+')">
-            +
-          </button>
-          <button class="control-bar-btn plus-minus" onclick="onFontSizeChange('-')">
-            -
-          </button>
-          <button class="control-bar-btn align-btn" onclick="onAlignText('left') , renderText() ">
-            <i class="fas fa-align-left"></i>
-          </button>
-          <button class="control-bar-btn align-btn" onclick="onAlignText('center') , renderText()">
-            <i class="fas fa-align-justify"></i>
-          </button>
-          <button class="control-bar-btn align-btn" onclick="onAlignText('right')  , renderText() ">
-            <i class="fas fa-align-right"></i>
-          </button> -->
+
         </div>
         <div class="input-line">
           <input oninput="onInputText()" class="text-input" placeholder="Type text" />
@@ -76,17 +41,17 @@
           <canvas id="img-canvas"></canvas>
         </div>
         <!-- side bar -->
-       
 
 
-         
-        </div>
+
+
+      </div>
       </div>
       <footer>
         <div class="footer-wrapper">
           <div class="footer-btn-wrapper">
             <ul class="ul-footer">
-              <li> <input onchange="onTextColor(this)" type="color" />              </li>
+              <li> <input onchange="onTextColor(this)" type="color" /> </li>
               <li> <button class="control-bar-btn plus-minus" onclick="onFontSizeChange('+')">
                   +
                 </button></li>
@@ -102,9 +67,9 @@
               <li> <button class="control-bar-btn align-btn" onclick="onAlignText('right')  , renderText() ">
                   <i class="fas fa-align-right"></i>
                 </button></li>
-              
+
             </ul>
-            
+
           </div>
         </div>
       </footer>
@@ -114,9 +79,28 @@
 
 
     <!-- gallery -->
-    <section class="gallery-section">
-      <h1 data-trans="main-header">Welcome to our memes generator</h1>
 
+    <section class="gallery-section">
+      <nav class="navbar">
+        <div class="nav-item" data-trans="about-us">About us</div>
+        <div class="nav-item" data-trans="contact-us">Contact us</div>
+        <div class="final-stage">
+          <button class="blue-btn nav-item">
+            <a href="#" onclick="downloadImg(this)" download="my-img.jpg" data-trans="save-btn">
+              Save
+            </a>
+          </button>
+
+          <button class="blue-btn nav-item" data-trans="share-btn">Share</button>
+          <input class="nav-item" type="file" name="image" onchange="onFileInputChange(event)" />
+
+        </div>
+      </nav>
+      <h1 data-trans="main-header">Welcome to our memes generator</h1>
+      <select onchange="onSetLang(this.value)">
+        <option value="en">English</option>
+        <option value="he">עברית</option>
+      </select>
       <h1 data-trans="pic-choice">Choose a pic</h1>
       <div class="pop-words">
         <div class="pop-word word1" onclick="searchElectedWord(this)"></div>
@@ -126,7 +110,8 @@
         <div class="pop-word word5" onclick="searchElectedWord(this)"></div>
       </div>
       <div class="memes-search">
-        <input type="text" id="myInput" onkeyup="keyWordSearch() , showList()" placeholder="Search by keywords.." data-trans="search-placeholder"  title="Type in a name" />
+        <input type="text" id="myInput" onkeyup="keyWordSearch() , showList()" placeholder="Search by keywords.."
+          data-trans="search-placeholder" title="Type in a name" />
         <ul id="inputUL" class="hidden"></ul>
       </div>
       <div class="grid-wrapper">
@@ -141,7 +126,7 @@
   <script>
     AOS.init();
   </script>
-  
+
   <script src="js/i18n-service.js"></script>
   <script src="lib/jquery/jquery.min.js"></script>
   <script src="js/canvas-service.js"></script>
