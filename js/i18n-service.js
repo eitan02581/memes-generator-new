@@ -1,10 +1,10 @@
 var gTrans = {
     'about-us': {
-        en: 'About us',
+        en: 'ABOUT US',
         he: 'עלינו'
     },
     'contact-us': {
-        en: 'Contact us',
+        en: 'CONTACT US',
         he: 'צור קשר'
     }, 
     'main-header': {
