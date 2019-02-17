@@ -26,14 +26,24 @@
     <section class="gallery-section">
 
       <nav class="navbar-area">
-        <div class="nav-item" data-trans="about-us" onclick="scrollDown()">About us</div>
-        <div class="nav-item" data-trans="contact-us" onclick="toggleContact()">Contact us</div>
-        <div class="flex languages">
-          <select onchange="onSetLang(this.value)">
-            <option value="en">English</option>
-            <option value="he">עברית</option>
-          </select>
-        </div>
+        <ul class="gallary-nav-ul">
+          <li>
+            <div class="" data-trans="about-us" onclick="scrollDown()"><button>About us</button></div>
+          </li>
+          <li>
+            <div class="" data-trans="contact-us" onclick="toggleContact()"> <button>Contact us</button> </div>
+          </li>
+          <li>
+            <div class="flex languages">
+              <select class="select-nav-gal" onchange="onSetLang(this.value)">
+                <option value="en">English</option>
+                <option value="he">עברית</option>
+              </select>
+            </div>
+          </li>
+        </ul>
+        <!-- <div class="nav-item" data-trans="contact-us" onclick="toggleContact()">Contact us</div> -->
+
       </nav>
 
       <!-- CONTACT US -->
@@ -99,7 +109,7 @@
         </section>
       </div>
 
-      <h1 data-trans="main-header">Memes generator</h1>
+      <h1 class="h1-gal" data-trans="main-header">Memes generator</h1>
 
       <div class="pop-words">
         <div class="pop-word word1" onclick="searchElectedWord(this)"></div>
