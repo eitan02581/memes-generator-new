@@ -19,7 +19,7 @@ function createTxtObj() {
     return {
         isDraggable: false,
         line: '',
-        font: 'Ariel',
+        font: 'Impact',
         size: 50,
         align: '',
         color: '#fff',

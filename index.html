@@ -99,8 +99,7 @@
         </section>
       </div>
 
-      <h1 data-trans="main-header">Welcome to our memes generator</h1>
-      <h1 data-trans="pic-choice">Choose a pic</h1>
+      <h1 data-trans="main-header">Memes generator</h1>
 
       <div class="pop-words">
         <div class="pop-word word1" onclick="searchElectedWord(this)"></div>
@@ -135,8 +134,8 @@
           </div>
           <div class="profile flex justify-center">
             <div class="flex justify-center team-member">
-              <img class="profile-image" src="meme-imgs/Yoni.jpg" alt="">
-              <h3>Eitan Elnekave</h3>
+                <img class="profile-image" src="meme-imgs/eitan.jpg" alt="">
+                <h3>Eitan Elnekave</h3>
             </div>
             <div class="profile-desc flex justify-center">
               <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
@@ -157,8 +156,7 @@
                 <li></li>
                 <li> <button class="nav-btn" onclick="onDispGallerry()" data-trans="return-btn">Back to gallery</button>
                 </li>
-                <li> <button class="nav-btn "> <a href="#" onclick="downloadImg(this)" download="my-img.jpg"
-                      data-trans="save-btn">
+                <li> <button class="nav-btn "> <a href="#" onclick="downloadImg(this)" download="my-img.jpg" data-trans="save-btn">
                       Save </a></button></li>
                 <li> <button class="nav-btn " data-trans="share-btn">Share</button> </li>
                 <li></li>
@@ -168,20 +166,33 @@
           </nav>
         </div>
         <div class="center">
+          <div class="align-ul-mobile">
+            <ul>
+              <li> <button class="control-bar-btn align-btn" onclick="onAlignText('left') , renderText() ">
+                  <i class="fas fa-align-left"></i>
+                </button></li>
+              <li> <button class="control-bar-btn align-btn" onclick="onAlignText('center') , renderText()">
+                  <i class="fas fa-align-justify"></i>
+                </button></li>
+              <li> <button class="control-bar-btn align-btn" onclick="onAlignText('right')  , renderText() ">
+                  <i class="fas fa-align-right"></i>
+                </button></li>
+            </ul>
+          </div>
 
           <div class="canvas-wrapper">
             <canvas id="img-canvas"></canvas>
           </div>
           <div class="input-line-container">
-              <div class="input-line-wrapper">
-                <button class="erase-btn" onclick="onEraseText()">X</button>
-                <input oninput="onInputText()" class="text-input" placeholder="Type text" />
-                <button class="add-line-btn" onclick="onAddLine()" data-trans="add-line">Add line</button>
-                <select onchange="onFontSelect(this) , renderText()" class="select-font"></select>
-              </div>
+            <div class="input-line-wrapper">
+              <button class="erase-btn" onclick="onEraseText()">X</button>
+              <input oninput="onInputText()" class="text-input" placeholder="Type text" />
+              <button class="add-line-btn" onclick="onAddLine()" data-trans="add-line">Add line</button>
+              <select onchange="onFontSelect(this) , renderText()" class="select-font"></select>
             </div>
+          </div>
         </div>
-        
+
         <footer>
           <div class="footer-wrapper">
             <div class="footer-btn-wrapper">

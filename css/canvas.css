@@ -31,7 +31,8 @@ main {
     width: 100%;
     background-color: #00d4bf
 }
-.empty-nav-div{
+
+.empty-nav-div {
     width: 100%;
     height: 60px;
     background-color: red;
@@ -49,10 +50,12 @@ main {
     width: 100%;
     background-color: #009688;
 }
-nav a:hover{
-    color:  white;
+
+nav a:hover {
+    color: white;
     text-decoration: none;
 }
+
 .nav-ul li {
     display: flex;
     flex: 1;
@@ -71,7 +74,7 @@ nav a:hover{
     border-left: 2px solid #00d4bf;
 }
 
-.nav-ul li:last-child{
+.nav-ul li:last-child {
     border-right: 2px solid #00d4bf;
 }
 
@@ -116,8 +119,9 @@ nav a {
     justify-content: center;
     flex-wrap: wrap;
     margin-top: 10px;
-
-
+}
+.input-line-wrapper button:hover  , input:hover  ,.input-line-wrapper select:hover {
+    border-bottom: 5px solid #00d4bf;
 }
 
 .input-line-wrapper>* {
@@ -146,7 +150,7 @@ canvas {
     border: none;
     height: 50px;
     border-bottom: 5px solid #009688;
-
+    text-align-last: center;
 }
 
 .text-input {
@@ -382,23 +386,77 @@ canvas {
 }
 
 @media (max-width: 940px) {
-    .nav-btn{
+    .nav-btn {
 
         font-size: 17px;
     }
 
 }
 
-@media (max-width: 550px) {
-    .nav-btn{
+.align-ul-mobile {
+    display: none;
+}
+
+.align-ul-mobile ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    height: 60px;
+    padding: 0;
+}
+
+.align-ul-mobile ul button {
+    padding: 0;
+    background-color: #009688;
+    width: 70px;
+    text-align: center;
+}
+
+@media (max-width: 650px) {
+    .ul-footer {
+        display: flex;
+        justify-content: center;
     }
+
+    .ul-footer li:nth-child(n+4) {
+        display: none;
+    }
+
+    .ul-footer li:nth-child(3) {
+        border-right: 2px solid #00d4bf
+    }
+
+    .align-ul-mobile {
+        display: unset;
+    }
+
+    .text-input:focus {
+        width: 150px
+    }
+    .input-line-wrapper{
+        height: 150px;
+    }
+    .align-ul-mobile{
+        margin-bottom: 20px;
+
+    }
+
 
 }
 
+@media (max-width: 550px) {}
+
 @media (max-width: 390px) {
-    .nav-btn{
+    .nav-btn {
 
         font-size: 13px;
     }
+    .text-input:focus {
+        width: 150px
+    }
+    .input-line-wrapper{
+        height: 150px;
+    }
+
 
 }
