@@ -294,6 +294,10 @@ box-shadow: 0px 0px 37px 0px rgba(0,0,0,0.75);
     cursor: pointer;
 }
 
+.font-special {
+    font-family: 'Kaushan Script', 'Helvetica Neue', Helvetica, Arial, cursive;
+}
+
 .control-bar-btn {
     border: none;
     background: none;

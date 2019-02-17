@@ -144,6 +144,8 @@ h1 {
     background-color: #f8f9fa;
     position: relative;
     bottom: 0;
+    background-color: #009688;
+
 }
 .about-h1{
     text-align: center;
@@ -168,6 +170,8 @@ h1 {
     color: white;
     font-weight: bold;
     text-decoration: none;
+    letter-spacing: 2px;
+
 }
 .profile {
     width: 80%;
