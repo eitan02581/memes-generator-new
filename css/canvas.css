@@ -291,6 +291,10 @@ canvas {
     cursor: pointer;
 }
 
+.font-special {
+    font-family: 'Kaushan Script', 'Helvetica Neue', Helvetica, Arial, cursive;
+}
+
 .control-bar-btn {
     border: none;
     background: none;
