@@ -1,6 +1,7 @@
 var gInputImgEv
 var gFonts = ['Ariel', 'cursive', 'Courier', 'Sans Serif', 'Comic Sans MS', 'Times New Roman', 'Courier New', 'Verdana', 'Trebuchet MS',
-             'Arial Black', 'Impact', 'Bookman', 'Garamond', 'Palatino','Georgia'];
+    'Arial Black', 'Impact', 'Bookman', 'Garamond', 'Palatino', 'Georgia'
+];
 
 var gUploadedImg
 
@@ -59,12 +60,12 @@ function handleImageFromInput(ev, onImageReady) {
         gUploadedImg.src = event.target.result;
     }
     reader.readAsDataURL(ev.target.files[0]);
-    
-    
+
+
 }
 // TODO: pop txtITEM FROM GMEME
-function eraseText(elErase) {
-    elErase.previousElementSibling.value = '';
+function eraseText() {
+    document.querySelector('.text-input').value = '';
     inputText();
 }
 

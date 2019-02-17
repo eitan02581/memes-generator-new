@@ -130,7 +130,8 @@ function renderText() {
         // onAlignText(i, txtItem.align)
         // ctx.fillStyle = '#FFA500';
         // gCtx.lineWidth = 2
-        // gCtx.fillStyle = 'red'
+        gCtx.fillStyle = 'red'
+        gCtx.fillText(txtItem.line, txtItem.posX, txtItem.posY);
         gCtx.strokeStyle = txtItem.color;
         gCtx.strokeText(txtItem.line, txtItem.posX, txtItem.posY);
         // onAlignText(i, txtItem.align)
