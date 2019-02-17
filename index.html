@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="css/general.css" />
+  <link rel="stylesheet" href="css/gallery.css" />
+  <link rel="stylesheet" href="css/canvas.css" />
+  <!-- cdn links -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
+    crossorigin="anonymous">
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <link rel="shortcut icon" type="image/png" href="http://www.flagblvd.com/wp-content/uploads/2015/09/israeli-flag-medium-570x600.png" />
+  <title>Memes-Generator</title>
+</head>
+
+<body onload="init()">
+
+
+  <!-- canvas -->
+  <!-- <input type="file" name="image" onchange="onFileInputChange(event)" /> -->
+  <main>
+    <section class="gallery-section">
+
+      <nav class="navbar-area">
+        <div class="nav-item" data-trans="about-us" onclick="scrollDown()">About us</div>
+        <div class="nav-item" data-trans="contact-us" onclick="toggleContact()">Contact us</div>
+        <div class="flex languages">
+          <select onchange="onSetLang(this.value)">
+            <option value="en">English</option>
+            <option value="he">עברית</option>
+          </select>
+        </div>
+      </nav>
+
+      <!-- CONTACT US -->
+      <div class="contact-modal">
+        <section class="contact">
+          <form action="mail.php" method="post">
+            <div class="card border-primary rounded-0">
+              <div class="card-header p-0">
+                <div class="bg-info text-white text-center py-2">
+                  <h3><i class="fa fa-envelope"></i> CONTACT</h3>
+                </div>
+              </div>
+              <div class="card-body p-3">
+                <!--Body-->
+                <div class="form-group">
+                  <div class="input-group mb-2">
+                    <div class="input-group-prepend">
+                      <div class="input-group-text">
+                        <i class="fa fa-user text-info"></i>
+                      </div>
+                    </div>
+                    <input type="text" class="form-control" id="contact-name" name="Name" placeholder="Name" required />
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="input-group mb-2">
+                    <div class="input-group-prepend">
+                      <div class="input-group-text">
+                        <i class="fa fa-envelope text-info"></i>
+                      </div>
+                    </div>
+                    <input type="email" class="form-control" id="contact-email" name="email" placeholder="example@gmail.com"
+                      required />
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="input-group mb-2">
+                    <div class="input-group-prepend">
+                      <div class="input-group-text">
+                        <i class="fa fa-comment text-info"></i>
+                      </div>
+                    </div>
+                    <textarea id="contact-subject" class="form-control" placeholder="Subject" required></textarea>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="input-group mb-2">
+                    <div class="input-group-prepend">
+                      <div class="input-group-text">
+                        <i class="fa fa-comment text-info"></i>
+                      </div>
+                    </div>
+                    <textarea id="contact-body" class="form-control" placeholder="Type here" required></textarea>
+                  </div>
+                </div>
+
+                <div class="text-center">
+                  <input onclick="sendEmail()" style="cursor:pointer" type="button" value="SEND" class="btn btn-info btn-block rounded-0 py-2" />
+                </div>
+              </div>
+            </div>
+          </form>
+        </section>
+      </div>
+
+      <h1 data-trans="main-header">Welcome to our memes generator</h1>
+      <h1 data-trans="pic-choice">Choose a pic</h1>
+
+      <div class="pop-words">
+        <div class="pop-word word1" onclick="searchElectedWord(this)"></div>
+        <div class="pop-word word2" onclick="searchElectedWord(this)"></div>
+        <div class="pop-word word3" onclick="searchElectedWord(this)"></div>
+        <div class="pop-word word4" onclick="searchElectedWord(this)"></div>
+        <div class="pop-word word5" onclick="searchElectedWord(this)"></div>
+      </div>
+
+      <div class="memes-search">
+        <input type="text" id="myInput" onkeyup="keyWordSearch() , showList()" placeholder="Search by keywords.."
+          data-trans="search-placeholder" title="Type in a name" />
+        <ul id="inputUL" class="hidden"></ul>
+      </div>
+      <div class="grid-wrapper">
+        <div class="grid-container"></div>
+      </div>
+
+      <!-- ABOUT US -->
+      <footer class="page-footer" id="about-us">
+        <h1>ABOUT US</h1>
+        <div class="members flex justify-center">
+          <div class="profile flex justify-center">
+            <div class="flex justify-center team-member">
+              <img class="profile-image" src="meme-imgs/Yoni.jpg" alt="">
+              <h3>Yehonatan Ratzon</h3>
+            </div>
+            <div class="profile-desc flex justify-center">
+              <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
+            </div>
+          </div>
+          <div class="profile flex justify-center">
+            <div class="flex justify-center team-member">
+              <img class="profile-image" src="meme-imgs/Yoni.jpg" alt="">
+              <h3>Eitan Elnekave</h3>
+            </div>
+            <div class="profile-desc flex justify-center">
+              <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
+            </div>
+          </div>
+        </div>
+        <button class="btn btn-info" onclick=scrollUp()>Go back to top</button>
+      </footer>
+    </section>
+
+    <section class="canvas-section hidden">
+      <div class="editor-container">
+
+        <div class="nav-wrapper">
+          <nav>
+            <div class="nav-btn-wrapper">
+              <ul class="nav-ul">
+                <li></li>
+                <li> <button class="nav-btn" onclick="onDispGallerry()" data-trans="return-btn">Back to gallery</button>
+                </li>
+                <li> <button class="nav-btn "> <a href="#" onclick="downloadImg(this)" download="my-img.jpg"
+                      data-trans="save-btn">
+                      Save </a></button></li>
+                <li> <button class="nav-btn " data-trans="share-btn">Share</button> </li>
+                <li></li>
+
+              </ul>
+            </div>
+          </nav>
+        </div>
+        <div class="center">
+
+          <div class="canvas-wrapper">
+            <canvas id="img-canvas"></canvas>
+          </div>
+          <div class="input-line-container">
+              <div class="input-line-wrapper">
+                <button class="erase-btn" onclick="onEraseText()">X</button>
+                <input oninput="onInputText()" class="text-input" placeholder="Type text" />
+                <button class="add-line-btn" onclick="onAddLine()" data-trans="add-line">Add line</button>
+                <select onchange="onFontSelect(this) , renderText()" class="select-font"></select>
+              </div>
+            </div>
+        </div>
+        
+        <footer>
+          <div class="footer-wrapper">
+            <div class="footer-btn-wrapper">
+              <ul class="ul-footer">
+                <li> <input onchange="onTextColor(this)" type="color" /> </li>
+                <li> <button class="control-bar-btn plus-minus" onclick="onFontSizeChange('+')">
+                    +
+                  </button></li>
+                <li><button class="control-bar-btn plus-minus" onclick="onFontSizeChange('-')">
+                    -
+                  </button></li>
+                <li> <button class="control-bar-btn align-btn" onclick="onAlignText('left') , renderText() ">
+                    <i class="fas fa-align-left"></i>
+                  </button></li>
+                <li> <button class="control-bar-btn align-btn" onclick="onAlignText('center') , renderText()">
+                    <i class="fas fa-align-justify"></i>
+                  </button></li>
+                <li> <button class="control-bar-btn align-btn" onclick="onAlignText('right')  , renderText() ">
+                    <i class="fas fa-align-right"></i>
+                  </button></li>
+              </ul>
+            </div>
+          </div>
+        </footer>
+      </div>
+
+    </section>
+  </main>
+
+
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+
+
+  <script src="lib/popper/popper.min.js"></script>
+  <script src="lib/jquery/jquery.min.js"></script>
+  <script src="lib/bootstrap/js/bootstrap.min.js"></script>
+
+  <script src="js/i18n-service.js"></script>
+  <script src="js/canvas-service.js"></script>
+  <script src="js/canvas-memes.js"></script>
+  <script src="js/gallery-service.js"></script>
+  <script src="js/gallery.js"></script>
+  <script src="js/util.js"></script>
+  <script src="js/main.js"></script>
+</body>
+
+</html>
