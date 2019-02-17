@@ -7,7 +7,7 @@ var gTxtItemIdx
 // indicate mouse's place
 var gStartX
 var gStartY
-var gFirstImage 
+var gFirstImage
 
 
 
@@ -83,7 +83,7 @@ function getBestAspectSize(image) {
     }
     gCanvas.width = resultImageW
     gCanvas.height = resultImageH
-    
+
 }
 
 function convertImageToCanvas(id) {
@@ -91,52 +91,8 @@ function convertImageToCanvas(id) {
     gMeme.selectedImgId = id;
     var image = document.getElementById(`${id}`);
     if (gFirstImage) {
-        
         getBestAspectSize(image)
     }
-    // image resize 
-    // if (window.innerWidth > 940 && (image.naturalWidth >= 700 || image.naturalHeight >= 700)) {
-    //     gCanvas.width = image.naturalWidth * 0.8;
-    //     gCanvas.height = image.naturalHeight * 0.8;
-    // } else if (window.innerWidth >= 540 && window.innerWidth <= 940) {
-    //     if (image.naturalWidth >= 700 || image.naturalHeight >= 700) {
-    //         gCanvas.width = image.naturalWidth * 0.7;
-    //         gCanvas.height = image.naturalHeight * 0.7;
-    //     } else if (image.naturalWidth >= 600 || image.naturalHeight >= 600) {
-    //         gCanvas.width = image.naturalWidth * 0.8;
-    //         gCanvas.height = image.naturalHeight * 0.8;
-    //     } else if (image.naturalWidth >= 500 || image.naturalHeight >= 500) {
-    //         gCanvas.width = image.naturalWidth * 0.5;
-    //         gCanvas.height = image.naturalHeight * 0.5;
-    //     } else if (image.naturalWidth >= 400 || image.naturalHeight >= 400) {
-    //         gCanvas.width = image.naturalWidth * 0.55;
-    //         gCanvas.height = image.naturalHeight * 0.55;
-    //     } else {
-    //         gCanvas.width = image.naturalWidth;
-    //         gCanvas.height = image.naturalHeight;
-    //     }
-    // } else if (window.innerWidth < 540) {
-    //     if (image.naturalWidth >= 700 || image.naturalHeight >= 700) {
-    //         gCanvas.width = image.naturalWidth * 0.35;
-    //         gCanvas.height = image.naturalHeight * 0.35;
-    //     } else if (image.naturalWidth >= 600 || image.naturalHeight >= 600) {
-    //         gCanvas.width = image.naturalWidth * 0.35;
-    //         gCanvas.height = image.naturalHeight * 0.35;
-    //     } else if (image.naturalWidth >= 500 || image.naturalHeight >= 500) {
-    //         gCanvas.width = image.naturalWidth * 0.5;
-    //         gCanvas.height = image.naturalHeight * 0.5;
-    //     } else if (image.naturalWidth >= 400 || image.naturalHeight >= 400) {
-    //         gCanvas.width = image.naturalWidth * 0.55;
-    //         gCanvas.height = image.naturalHeight * 0.55;
-    //     } else {
-    //         gCanvas.width = image.naturalWidth;
-    //         gCanvas.height = image.naturalHeight;
-    //     }
-    // } else {
-    //     gCanvas.width = image.naturalWidth;
-    //     gCanvas.height = image.naturalHeight;
-    // }
-   
     gCtx.drawImage(image, 0, 0, gCanvas.width, gCanvas.height);
 }
 
@@ -160,7 +116,7 @@ function renderText() {
     var textItem = gMeme.txts
     textItem.forEach((txtItem, i) => {
         gCtx.font = `${txtItem.size}px ${txtItem.font}`;
-        gCtx.fillStyle = 'white'
+        gCtx.fillStyle = txtItem.color
         gCtx.fillText(txtItem.line, txtItem.posX, txtItem.posY);
         gCtx.strokeStyle = 'black';
         gCtx.lineWidth = 1
