@@ -22,7 +22,7 @@ function renderGrid(images) {
 function renderUL() {
     var strHTML = '';
     for (let i =0 ; i< gKeyWords.length; i++) {
-        strHTML += `<li onclick="searchElectedWord(this)"><a href="#">${gKeyWords[i].word}</a></li>`
+        strHTML += `<li onclick="searchElectedWord(this)"><a href="#" data-trans="tag-${gKeyWords[i].word}">${gKeyWords[i].word}</a></li>`
     }
     document.querySelector('#inputUL').innerHTML = strHTML;
 }
