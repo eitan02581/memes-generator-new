@@ -8,8 +8,8 @@ var gTrans = {
         he: 'צור קשר'
     }, 
     'main-header': {
-        en: 'Welcome to our memes generator',
-        he: 'ברוכים הבאים למימ גנרטור'
+        en: 'Memes generator',
+        he: 'יוצר המימים'
     },
     'return-btn': {
         en: 'Back to gallery',
