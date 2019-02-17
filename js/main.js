@@ -1,3 +1,9 @@
+function scrollDown() {
+    $('html,body').animate({
+        scrollTop: $("#about-us").offset().top},
+        'slow');
+}
+
 function init() {
     initGrid();
 

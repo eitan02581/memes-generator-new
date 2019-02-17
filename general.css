@@ -14,7 +14,7 @@ body {
     background-color: #2196f3;
 }
 
-a{
+a {
     text-decoration: none
 }
 
@@ -45,5 +45,44 @@ h1 {
     text-align: center;
 }
 
+/* footer area */
 
+.page-footer {
+    width: 100%;
+    height: auto;
+    background-color: #f8f9fa;
+    position: relative;
+    bottom: 0;
+    border-top: 5px solid black;
+}
 
+.profile {
+    width: 80%;
+    height: auto;
+    align-items: center;
+    flex-direction: column;
+}
+
+.team-member {
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+}
+
+.profile-image {
+    border-radius: 100%;
+}
+
+.members {
+    align-items: center;
+}
+
+@media (max-width: 768px) {
+    .members {
+        flex-direction: column;
+    }
+}
+
+.profile-desc {
+    text-align: center;
+}

@@ -1,8 +1,5 @@
 
 
-
-
-
 main {
     text-align: center;
 }
@@ -70,8 +67,6 @@ canvas {
     width: 30px;
     display: inline-block
 }
-
-
 
 .image-render-style {
     width: 100%;

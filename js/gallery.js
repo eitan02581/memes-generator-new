@@ -12,7 +12,7 @@ function initGrid() {
 
 function renderGrid(images) {
     var strHTML = images.map(function (image) {
-        return `  <div class="image-wrapper"  data-aos="fade-up" data-aos-duration="700"  > <img id="${image.id}"  onclick="  onDispCanvas('${image.id}')"  class="image-render-style" src="${image.url}" alt=""> </div>`
+        return `  <div class="image-wrapper"  data-aos="fade-up" data-aos-duration="700"  > <img id="${image.id}"  onclick="  onDispCanvas('${image.id}')"   class="image-render-style" src="${image.url}" alt=""> </div>`
          
     });
     var str = strHTML.join('');
