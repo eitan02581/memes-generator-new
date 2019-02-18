@@ -70,7 +70,6 @@ function getMousePosRelative(ev) {
     var rect = gCanvas.getBoundingClientRect();
     if ("ontouchstart" in document.documentElement) {
         return {
-
             x: ev.targetTouches[0].clientX - rect.left,
             y: ev.targetTouches[0].clientY - rect.top
         }
