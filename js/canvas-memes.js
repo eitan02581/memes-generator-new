@@ -12,6 +12,7 @@ var gFirstImage
 
 
 
+
 function initCanvas() {
     gCanvas = document.querySelector('#img-canvas');
     gCtx = gCanvas.getContext('2d');
@@ -56,42 +57,12 @@ function initGmeme() {
     }
 }
 
-function getBestAspectSize(image) {
-    gFirstImage = false
-    if (window.innerWidth > 540 && window.innerWidth < 940) {
-        gCanvas.width = 400
-        gCanvas.height = 400
-
-    } else if (window.innerWidth > 450 && window.innerWidth < 540) {
-        gCanvas.width = 350
-        gCanvas.height = 350
-
-    } else if (window.innerWidth < 450) {
-        gCanvas.width = 280
-        gCanvas.height = 280
-
-    }
-    var imgRatio = image.width / image.height; // Image aspect ratio
-    var canvasRatio = gCanvas.width / gCanvas.height; // Canvas aspect ratio
-    var resultImageH, resultImageW;
-    if (imgRatio < canvasRatio) {
-        resultImageH = gCanvas.height;
-        resultImageW = resultImageH * imgRatio;
-    } else {
-        resultImageW = gCanvas.width;
-        resultImageH = resultImageW / imgRatio;
-    }
-    gCanvas.width = resultImageW
-    gCanvas.height = resultImageH
-
-}
-
 function convertImageToCanvas(id) {
     clearCtx();
     gMeme.selectedImgId = id;
     var image = document.getElementById(`${id}`);
     if (gFirstImage) {
-        getBestAspectSize(image)
+        setBestAspectSize(image)
     }
     gCtx.drawImage(image, 0, 0, gCanvas.width, gCanvas.height);
 }
@@ -110,7 +81,6 @@ function renderText() {
     // clear old text , render img + new text
     clearCtx()
     if (gMeme.selectedImgId) convertImageToCanvas(gMeme.selectedImgId)
-    // TODO: fix the rendering text problem on input file image
     else gCtx.drawImage(gUploadedImg, 0, 0);
     // render all existing texts 
     var textItem = gMeme.txts
@@ -174,28 +144,6 @@ function onEraseText(elText) {
 }
 
 
-// -------------------------------x and y positions-------------------------
-
-function setBottomTextMeasure() {
-    gMeme.txts[1].posY = gCanvas.height - 50;
-
-}
-
-function getMousePosRelative(ev) {
-    var rect = gCanvas.getBoundingClientRect();
-    if ("ontouchstart" in document.documentElement) {
-        return {
-
-            x: ev.targetTouches[0].clientX - rect.left,
-            y: ev.targetTouches[0].clientY - rect.top
-        }
-    } else {
-        return {
-            x: ev.clientX - rect.left,
-            y: ev.clientY - rect.top
-        }
-    }
-}
 
 
 
