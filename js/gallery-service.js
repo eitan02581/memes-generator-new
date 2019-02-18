@@ -22,7 +22,7 @@ function createImages() {
     gImages.push(createImage("meme-imgs/12.jpg", ['man', 'point', 'איש', 'מצביע']));
     gImages.push(createImage("meme-imgs/19.jpg", ['man', 'crazy', 'yelling', 'איש', 'משוגע', 'צועק']));
     gImages.push(createImage("meme-imgs/Ancient-Aliens.jpg", ['man', 'big', 'happy', 'איש', 'גדול', 'שמח']));
-    gImages.push(createImage("meme-imgs/drevil.jpg", ['man', 'drevil', 'איש', 'דררשע']));
+    gImages.push(createImage("meme-imgs/drevil.jpg", ['man', 'drevil', 'איש', 'דר רשע']));
     gImages.push(createImage("meme-imgs/img2.jpg", ['kids', 'nature', 'dancing', 'ילדים', 'טבע', 'ריקודים']));
     gImages.push(createImage("meme-imgs/img4.jpg", ['trump', 'point', 'טראמפ', 'מצביע']));
     gImages.push(createImage("meme-imgs/img5.jpg", ['baby', 'crazy', 'תינוק', 'משוגע']));
