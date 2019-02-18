@@ -10,17 +10,19 @@
   <link rel="stylesheet" href="css/gallery.css" />
   <link rel="stylesheet" href="css/canvas.css" />
   <!-- cdn links -->
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
-    crossorigin="anonymous">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
-    crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+    integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"
+    integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
   <link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
   <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
-  <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet'
+    type='text/css'>
   <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-  <link rel="shortcut icon" type="image/png" href="http://www.flagblvd.com/wp-content/uploads/2015/09/israeli-flag-medium-570x600.png" />
+  <link rel="shortcut icon" type="image/png"
+    href="http://www.flagblvd.com/wp-content/uploads/2015/09/israeli-flag-medium-570x600.png" />
   <title>Memes-Generator</title>
 </head>
 
@@ -81,8 +83,8 @@
                         <i class="fa fa-envelope text-info"></i>
                       </div>
                     </div>
-                    <input type="email" class="form-control" id="contact-email" name="email" placeholder="example@gmail.com"
-                      required />
+                    <input type="email" class="form-control" id="contact-email" name="email"
+                      placeholder="example@gmail.com" required />
                   </div>
                 </div>
                 <div class="form-group">
@@ -107,7 +109,8 @@
                 </div>
 
                 <div class="text-center">
-                  <input onclick="sendEmail()" style="cursor:pointer" type="button" value="SEND" class="btn btn-info btn-block rounded-0 py-2" />
+                  <input onclick="sendEmail()" style="cursor:pointer" type="button" value="SEND"
+                    class="btn btn-info btn-block rounded-0 py-2" />
                 </div>
               </div>
             </div>
@@ -126,8 +129,11 @@
       </div>
 
       <div class="memes-search">
-        <input type="text" id="myInput" onkeyup="keyWordSearch() , showList()" placeholder="Search by keywords.."
-          data-trans="search-placeholder" title="Type in a name" />
+        <div>
+          <input type="text" id="myInput" onkeyup="keyWordSearch() , showList()" placeholder="Search by keywords.."
+            data-trans="search-placeholder" title="Type in a name" />
+          <button class="btn btn-info delete-input" onclick="eraseInput()"><i class="far fa-trash-alt"></i></button>
+        </div>
         <ul id="inputUL" class="hidden"></ul>
       </div>
 
@@ -162,7 +168,8 @@
               </ul>
             </div>
             <div class="profile-desc flex justify-center">
-              <button class="port-btn font-special"> <a href="https://yonir44.github.io/my-portfolio/">See my portfolio</a></button>
+              <button class="port-btn font-special"> <a href="https://yonir44.github.io/my-portfolio/">See my
+                  portfolio</a></button>
             </div>
           </div>
           <div class="profile flex justify-center">
@@ -207,7 +214,8 @@
                 <li></li>
                 <li> <button class="nav-btn" onclick="onDispGallerry()" data-trans="return-btn">Back to gallery</button>
                 </li>
-                <li> <button class="nav-btn "> <a href="#" onclick="downloadImg(this)" download="my-img.jpg" data-trans="save-btn">
+                <li> <button class="nav-btn "> <a href="#" onclick="downloadImg(this)" download="my-img.jpg"
+                      data-trans="save-btn">
                       Save </a></button></li>
                 <li>
                   <form action="" method="POST" enctype="multipart/form-data" onsubmit="uploadImg(this, event)">

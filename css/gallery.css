@@ -76,8 +76,7 @@
     position: absolute;
     top: 79px;
 }
-ul.social-buttons li a{
-  
+ul.social-buttons li a {  
     background-color: #17a2b8;
   }
 
@@ -100,8 +99,15 @@ ul.social-buttons li a{
 .memes-search {
     display: flex;
     justify-content: center;
-    flex-direction: column;
+    flex-direction: row;
     position: relative;
+    height: 43px;
+    margin-bottom: 35px;
+}
+
+.delete-input {
+    height: 44px;
+    margin-top: 2px;
 }
 
 
@@ -117,11 +123,13 @@ ul.social-buttons li a{
     margin: 10px;
     transition: 00.3s;
 }
+
 .pop-words:hover{
     -webkit-box-shadow: 8px 4px 52px 4px rgba(0,0,0,0.75);
--moz-box-shadow: 8px 4px 52px 4px rgba(0,0,0,0.75);
-box-shadow: 8px 4px 52px 4px rgba(0,0,0,0.75);
+    -moz-box-shadow: 8px 4px 52px 4px rgba(0,0,0,0.75);
+    box-shadow: 8px 4px 52px 4px rgba(0,0,0,0.75);
 }
+
 @media (max-width: 768px) {
     .pop-words {
         width: 90%;
