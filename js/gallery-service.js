@@ -91,3 +91,8 @@ function createKeyWords() {
     gKeyWords[10].fontSize = 16;
     gKeyWords[13].fontSize = 24;
 }
+
+function eraseInput() {
+    document.querySelector('#myInput').value = '';
+    renderGrid(gImages);
+}
