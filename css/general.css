@@ -19,13 +19,9 @@ a {
     text-decoration: none;
 }
 
-ul,
-li,
-h1 {
+ul, li, h1 {
     margin: 0;
-    /* padding: 0; */
 }
-
 
 .navbar-area {
     display: flex;
@@ -51,7 +47,7 @@ h1 {
     background-color: #009688;
 }
 
-.gallary-nav-ul button{
+.gallary-nav-ul button {
     border: none;
     background: none;
     transition: 0.3s;
@@ -118,20 +114,6 @@ nav a:hover {
     transition: 0.3s;
 }
 
-/* 
-.nav-item {
-    height: 100%;
-    width: 100px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.nav-item:hover {
-    cursor: pointer;
-    border-bottom: 5px solid red; */
-/* } */
-
 h1 {
     text-align: center;
 }
@@ -144,14 +126,15 @@ h1 {
     position: relative;
     bottom: 0;
     background-color: #009688;
-
 }
-.about-h1{
+
+.about-h1 {
     text-align: center;
     color: #FFEB3B;
     margin-top: 20px;
 }
-.port-btn{
+
+.port-btn {
     font-size: 20px;
     width: 210px;
     height: 57px;
@@ -161,17 +144,19 @@ h1 {
     margin-bottom: 20px;
     transition: 0.3s;
 }
-.port-btn:hover{
+
+.port-btn:hover {
     width: 220px;
     height: 65px;
 }
+
 .port-btn a {
     color: white;
     font-weight: bold;
     text-decoration: none;
     letter-spacing: 2px;
-
 }
+
 .profile {
     width: 80%;
     height: auto;

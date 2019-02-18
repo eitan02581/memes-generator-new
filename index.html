@@ -28,18 +28,18 @@
 
 <body onload="init()">
 
-  <!-- canvas -->
-
+  <!-- HOMEPAGE AREA -->
   <main>
     <section class="gallery-section">
 
+      <!-- NAVBAR -->
       <nav class="navbar-area">
         <ul class="gallary-nav-ul">
           <li>
-            <div class="" data-trans="about-us" onclick="scrollDown()"><button>About us</button></div>
+            <button class="" data-trans="about-us" onclick="scrollDown()">About us</button>
           </li>
           <li>
-            <div class="" data-trans="contact-us" onclick="toggleContact()"> <button>Contact us</button> </div>
+            <button class="" data-trans="contact-us" onclick="toggleContact()">Contact us</button>
           </li>
           <li>
             <div class="flex languages">
@@ -50,8 +50,6 @@
             </div>
           </li>
         </ul>
-        <!-- <div class="nav-item" data-trans="contact-us" onclick="toggleContact()">Contact us</div> -->
-
       </nav>
 
       <!-- CONTACT US -->
@@ -120,6 +118,7 @@
 
       <h1 class="h1-gal" data-trans="main-header">Memes generator</h1>
 
+      <!-- POPULAR WORDS BOX -->
       <div class="pop-words">
         <div class="pop-word word1" onclick="searchElectedWord(this)"></div>
         <div class="pop-word word2" onclick="searchElectedWord(this)"></div>
@@ -128,6 +127,7 @@
         <div class="pop-word word5" onclick="searchElectedWord(this)"></div>
       </div>
 
+      <!-- SEARCH INPUT IS HERE -->
       <div class="memes-search">
         <div>
           <input type="text" id="myInput" onkeyup="keyWordSearch() , showList()" placeholder="Search by keywords.."
@@ -137,6 +137,7 @@
         <ul id="inputUL" class="hidden"></ul>
       </div>
 
+      <!-- IMAGES GRID IS HERE -->
       <div class="grid-wrapper">
         <div class="grid-container"></div>
       </div>
@@ -204,10 +205,11 @@
       </footer>
     </section>
 
+    <!-- CANVAS AREA -->
     <section class="canvas-section hidden">
       <div class="editor-container">
-
         <div class="nav-wrapper">
+          <!-- CANVAS TOP NAVBAR -->
           <nav>
             <div class="nav-btn-wrapper">
               <ul class="nav-ul">
@@ -220,16 +222,17 @@
                 <li>
                   <form action="" method="POST" enctype="multipart/form-data" onsubmit="uploadImg(this, event)">
                     <input name="img" id="imgData" type="hidden" />
-                    <button class="nav-btn" type="submit">Share</button>
+                    <button class="nav-btn" type="submit" data-trans="share-btn">Share</button>
                   </form>
                 </li>
                 <li></li>
-
               </ul>
             </div>
           </nav>
         </div>
         <div class="center">
+          
+          <!-- MOVING TEXT BUTTONS -->
           <div class="align-ul-mobile">
             <ul>
               <li> <button class="control-bar-btn align-btn" onclick="onAlignText('left') , renderText() ">
@@ -244,9 +247,12 @@
             </ul>
           </div>
 
+          <!-- HERE IS THE CANVAS IMAGE -->
           <div class="canvas-wrapper">
             <canvas id="img-canvas"></canvas>
           </div>
+
+          <!-- HERE ARE THE SOME OF THE IMAGE EDITING CHOICES -->
           <div class="input-line-container">
             <div class="input-line-wrapper">
               <button class="erase-btn" onclick="onEraseText()"><i class="far fa-trash-alt"></i></button>
@@ -257,6 +263,7 @@
           </div>
         </div>
 
+        <!-- THE BOTTOM EDITING CHOICES -->
         <footer>
           <div class="footer-wrapper">
             <div class="footer-btn-wrapper">
