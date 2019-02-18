@@ -194,7 +194,6 @@ canvas {
     transform: translateY(-15px) scale(1.04);
 }
 
-
 /* footer */
 .footer-wrapper {
     position: relative;
@@ -247,36 +246,7 @@ canvas {
     }
 }
 
-
-
-/* helpers */
-
-.flex {
-    display: flex;
-}
-
-.justify-center {
-    justify-content: center;
-}
-
-.space-evenly {
-    justify-content: space-evenly;
-}
-
-.hidden {
-    display: none;
-}
-
 /* buttons  */
-
-.btn {
-    cursor: pointer;
-    margin-bottom: 10px;
-}
-
-.font-special {
-    font-family: 'Kaushan Script', 'Helvetica Neue', Helvetica, Arial, cursive;
-}
 
 .control-bar-btn {
     border: none;
